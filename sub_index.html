@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 日本語フォントと英字フォントの指定 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        /* カードのホバーエフェクト */
+        .card-link {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-green-800">TITLE</h1>
+            <p class="text-gray-600 mt-2">健康と食事に関するSPAコンテンツ一覧</p>
+        </header>
+
+        <main>
+            <!-- 各SPAへのリンクをカード形式で表示 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- カード1: キウイフルーツ -->
+                <a href="./kiwi-spa.html" class="card-link block bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col h-full">
+                        <h2 class="text-xl font-bold text-gray-800 text-center mb-2">キウイフルーツの健康効果</h2>
+                        <p class="text-gray-600 text-sm text-center flex-grow">9つの驚くべき健康効果と、食べ過ぎによる2つのデメリットについて、看護師の視点から詳しく解説します。</p>
+                    </div>
+                </a>
+
+                <!-- カード2: 癌予防の食品 -->
+                <a href="./cancer-food-spa.html" class="card-link block bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col h-full">
+                        <h2 class="text-xl font-bold text-gray-800 text-center mb-2">癌予防に効果的な食品</h2>
+                        <p class="text-gray-600 text-sm text-center flex-grow">癌細胞を消滅させる効果が期待される食品を複数ピックアップし、その具体的な効果と摂取方法をまとめました。</p>
+                    </div>
+                </a>
+
+                <!-- カード3: ブルーベリー -->
+                <a href="./blueberry-spa.html" class="card-link block bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col h-full">
+                        <h2 class="text-xl font-bold text-gray-800 text-center mb-2">ブルーベリーの健康効果</h2>
+                        <p class="text-gray-600 text-sm text-center flex-grow">小さな実に凝縮された10の健康効果と、摂取する上での注意点を分かりやすく解説しています。</p>
+                    </div>
+                </a>
+                
+                <!-- カード4: 酒粕 -->
+                <a href="./sakekasu-spa.html" class="card-link block bg-white p-6 rounded-xl shadow-lg">
+                     <div class="flex flex-col h-full">
+                        <h2 class="text-xl font-bold text-gray-800 text-center mb-2">酒粕の健康効果と発酵の秘密</h2>
+                        <p class="text-gray-600 text-sm text-center flex-grow">栄養豊富な酒粕の健康効果、発酵の仕組み、そしてアンチエイジングへの影響までを深く掘り下げます。</p>
+                    </div>
+                </a>
+
+                <!-- カード5: 腸内環境 -->
+                <a href="./dr-ishiguro-spa.html" class="card-link block bg-white p-6 rounded-xl shadow-lg">
+                     <div class="flex flex-col h-full">
+                        <h2 class="text-xl font-bold text-gray-800 text-center mb-2">腸内環境を整える食事法</h2>
+                        <p class="text-gray-600 text-sm text-center flex-grow">免疫の中心である腸。その環境を整えるための食事法や、毎日摂るべき重要な食材について解説します。</p>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+        
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>&copy; 2025 miwniw. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

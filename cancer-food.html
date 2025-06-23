@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>癌予防に効果的な食品 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 日本語フォントと英字フォントの指定 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        /* スクロールバーのスタイルをオレンジベースに変更 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fdba74; /* tailwind orange-300 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316; /* tailwind orange-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-green-800">癌細胞を消滅させる奇跡の食べ物</h1>
+            <p class="text-gray-600 mt-2">食習慣の改善で癌リスクを大幅に低減する</p>
+        </header>
+
+        <div class="md:grid md:grid-cols-12 md:gap-8">
+            <!-- 左側のナビゲーションメニュー -->
+            <aside class="md:col-span-3 lg:col-span-3 mb-8 md:mb-0">
+                <nav id="spa-nav" class="bg-white p-4 rounded-xl shadow-lg sticky top-8">
+                    <h2 class="text-lg font-bold text-gray-700 mb-4 border-b pb-2">食品一覧</h2>
+                    <ul class="space-y-1 max-h-[80vh] overflow-y-auto">
+                        <li><a href="#" data-target="overview" class="nav-link block p-3 rounded-md font-medium text-sm">はじめに</a></li>
+                        <li><a href="#" data-target="iwashi" class="nav-link block p-3 rounded-md font-medium text-sm">イワシ</a></li>
+                        <li><a href="#" data-target="daizu" class="nav-link block p-3 rounded-md font-medium text-sm">大豆</a></li>
+                        <li><a href="#" data-target="ninniku" class="nav-link block p-3 rounded-md font-medium text-sm">ニンニク</a></li>
+                        <li><a href="#" data-target="nuts" class="nav-link block p-3 rounded-md font-medium text-sm">ナッツ</a></li>
+                        <li><a href="#" data-target="ryokucha" class="nav-link block p-3 rounded-md font-medium text-sm">緑茶</a></li>
+                        <li><a href="#" data-target="chocolate" class="nav-link block p-3 rounded-md font-medium text-sm">チョコレート</a></li>
+                        <li><a href="#" data-target="soup" class="nav-link block p-3 rounded-md font-medium text-sm">野菜スープ</a></li>
+                        <li><a href="#" data-target="oliveoil" class="nav-link block p-3 rounded-md font-medium text-sm">オリーブオイル</a></li>
+                        <li><a href="#" data-target="zenryu" class="nav-link block p-3 rounded-md font-medium text-sm">全粒穀物</a></li>
+                        <li><a href="#" data-target="kinoko" class="nav-link block p-3 rounded-md font-medium text-sm">キノコ</a></li>
+                        <li><a href="#" data-target="sake" class="nav-link block p-3 rounded-md font-medium text-sm">鮭</a></li>
+                        <li><a href="#" data-target="flavonol" class="nav-link block p-3 rounded-md font-medium text-sm">フラボノール</a></li>
+                        <li><a href="#" data-target="umeboshi" class="nav-link block p-3 rounded-md font-medium text-sm">梅干し</a></li>
+                        <li><a href="#" data-target="whey" class="nav-link block p-3 rounded-md font-medium text-sm">ホエイプロテイン</a></li>
+                        <li><a href="#" data-target="aozakana" class="nav-link block p-3 rounded-md font-medium text-sm">青魚</a></li>
+                        <li><a href="#" data-target="kudamono" class="nav-link block p-3 rounded-md font-medium text-sm">果物</a></li>
+                        <li><a href="#" data-target="nigari" class="nav-link block p-3 rounded-md font-medium text-sm">にがり</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- 右側のコンテンツエリア -->
+            <main class="md:col-span-9 lg:col-span-9">
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg min-h-[600px]">
+                    <!-- 各セクションのコンテンツ -->
+                    <article id="overview" class="spa-content space-y-4">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">はじめに：食事と癌予防</h2>
+                        <p>食習慣は癌の予防において非常に重要です。食事を改善するだけで癌全体のリスクを<strong class="text-orange-600">30%から40%</strong>、研究によっては約半分に減らすことができるとされています。</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700 mt-4">
+                            <li>大腸がん、乳がん、前立腺がん: <strong class="text-orange-600">60%</strong>のリスク低減</li>
+                            <li>肺がん: <strong class="text-orange-600">40%から50%</strong>のリスク低減</li>
+                        </ul>
+                        <p class="mt-4">日本人の死因の第1位は癌であり、4人に1人が癌で亡くなっていますが、食生活の改善はそのリスクを大幅に低下させる可能性があります。以下に、癌細胞を消滅させる効果が期待される食品を紹介します。</p>
+                    </article>
+
+                    <article id="iwashi" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">イワシ</h2>
+                        <p>最強の抗酸化ミネラルと称される<strong class="text-orange-600">セレン</strong>を豊富に含みます。</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>体で最も重要な抗酸化酵素であるグルタチオンの合成に関与し、酸化から体を守ります。</li>
+                            <li>適切な量のセレン摂取は癌発症リスクを低下させると報告されています。</li>
+                            <li>100gあたり34mgのセレンを含み、習慣的な摂取が推奨されます。</li>
+                            <li>その他、甲状腺機能の向上、重金属の解毒、免疫賦活作用、精子の質向上などの効果も期待できます。</li>
+                        </ul>
+                    </article>
+
+                    <article id="daizu" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">大豆</h2>
+                        <p><strong class="text-orange-600">大豆イソフラボン</strong>を含み、強い抗癌作用が認められています。</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>大腸癌のリスクを約22%減少させ、乳がんのリスクも低下させると報告されています。</li>
+                            <li>女性ホルモンの調節作用や癌の原因となる内分泌攪乱物質の阻害作用があります。</li>
+                            <li>理想的な摂取量は1日50mg前後ですが、日本人の平均摂取量は25mgと不足気味です。</li>
+                            <li>納豆1パック（約35mg）、豆乳100ml（約30mg）、豆腐150g（約60mg）などに含まれます。</li>
+                        </ul>
+                        <div class="bg-red-50 border-l-4 border-red-400 text-red-800 p-4 rounded-r-lg mt-4" role="alert">
+                            <p class="font-bold">注意点</p>
+                            <p>過剰摂取は甲状腺への悪影響や子宮内膜症リスク増加の可能性が指摘されています。1日の最大摂取量は<strong class="font-medium">75mg</strong>を目安にしましょう。</p>
+                        </div>
+                    </article>
+
+                    <article id="ninniku" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">ニンニク</h2>
+                        <p>数ある野菜の中で最も抗癌作用が強いと言われています。アメリカ国立がん研究所は、127種類の野菜の中でニンニクが最も癌予防効果が高いと発表しています。</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li><strong class="text-orange-600">S-アリルシステイン</strong>を含み、大腸癌の予防、抗酸化作用、肝機能向上、認知症予防に効果があります。</li>
+                            <li>結腸直腸癌のリスクを有意に減少させ、胃がん、膵臓がん、乳がんのリスクを下げるエビデンスも存在します。</li>
+                            <li>サプリメントを選ぶ際は、<strong class="text-orange-600">熟成ニンニク（エイジドガーリック）</strong>から作られた高品質なものが推奨されます。</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="nuts" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">ナッツ（アーモンド含む）</h2>
+                        <p>最強の抗癌おやつと称され、癌予防に役立つ栄養素が豊富です。</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>アーモンドは<strong class="text-orange-600">ビタミンE</strong>が豊富で、癌を引き起こす最も強力な活性酸素の一つを撃退できます。</li>
+                            <li>アーモンドの摂取は乳がんのリスクを2?3倍も低下させることが報告されています。</li>
+                            <li>1日10g以上の摂取で、全身および癌の死亡率が低下すると報告されています。摂取量の目安は1日30gです。</li>
+                        </ul>
+                        <div class="bg-red-50 border-l-4 border-red-400 text-red-800 p-4 rounded-r-lg mt-4" role="alert">
+                            <p class="font-bold">注意点：アフラトキシン</p>
+                            <p>カビ毒であるアフラトキシンに注意が必要です。リスクを減らすため、小分けにされたナッツやローストされたものを選びましょう。</p>
+                        </div>
+                    </article>
+
+                    <article id="ryokucha" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">緑茶</h2>
+                        <p>カテキンというポリフェノールが豊富です。特に<strong class="text-orange-600">エピガロカテキンガレート（EGCG）</strong>が最も抗酸化力が強く、緑茶に豊富に含まれています。</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                             <li>前立腺がんや肺がんのリスク低下と関連していることが報告されています。</li>
+                             <li>効果を最大限得るには、熱湯で「気持ち長め」に淹れることが推奨されます。</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="chocolate" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">チョコレート（高カカオ）</h2>
+                        <p>カカオポリフェノールが強力な抗酸化作用を持ち、癌細胞に働きかけるとされています。</p>
+                        <div class="bg-orange-50 border-l-4 border-orange-400 text-orange-800 p-4 rounded-r-lg mt-4" role="alert">
+                            <p class="font-bold">選び方が重要</p>
+                            <p>癌予防効果を得るためには、カカオ濃度が<strong class="font-medium">最低70%以上</strong>のものを選びましょう。砂糖が多いチョコレートは逆効果になる可能性があります。</p>
+                        </div>
+                    </article>
+
+                    <article id="soup" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">野菜スープ</h2>
+                        <p>抗癌剤研究の権威である前田浩先生が最終的に癌予防にたどり着いたのが野菜スープです。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                             <li>野菜スープを飲んだグループは、飲まないグループに比べて生存期間が大幅に伸びたと報告されています。</li>
+                             <li>野菜をスープにすると細胞壁が壊れ、栄養素の吸収効率が非常に良くなります。</li>
+                             <li>生野菜や加熱野菜と比較して、スープの抗酸化力は<strong class="text-orange-600">10?20倍</strong>も高くなることが報告されています。</li>
+                             <li>特にニンジン、ブロッコリー、トマトなどの緑黄色野菜が推奨されます。</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="oliveoil" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">オリーブオイル</h2>
+                        <p>オレウロペイン、オレオカンタールといった成分が強力な抗酸化作用を持ち、癌細胞の増殖を抑制すると報告されています。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>オリーブオイルの摂取量が多い人は、そうでない人よりも癌のリスクが低下することが報告されています。</li>
+                            <li>炒め油などをオリーブオイルに置き換えることが推奨されます。</li>
+                            <li>品質の良いもの（例：遮光瓶入り）を選ぶことが重要です。</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="zenryu" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">全粒穀物</h2>
+                        <p>全粒穀物の摂取量が増えると、全癌死亡率が<strong class="text-orange-600">15%も低下する</strong>と報告されています。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>玄米、オートミールなど精製されていない穀物のことです。</li>
+                            <li>精製糖質の摂取量が多いと全死亡率が27%上昇することも報告されています。</li>
+                            <li>白米に「もち麦」などを3割程度混ぜて炊くなど、日常的に取り入れることが推奨されます。</li>
+                        </ul>
+                    </article>
+
+                    <article id="kinoko" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">キノコ</h2>
+                        <p>癌の天敵とされ、1日たった18gのキノコを食べるだけで、あらゆる癌のリスクが<strong class="text-orange-600">45%も低下する</strong>と報告されています。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                             <li>キノコ特有の成分である<strong class="font-medium">エルゴチオネイン</strong>が強力な抗酸化作用を持ちます。</li>
+                             <li>舞茸には免疫細胞を活性化する<strong class="font-medium">MDフラクション</strong>という成分が含まれます。</li>
+                             <li>特にヒラタケ、エノキダケ、舞茸、シイタケなどが推奨されます。</li>
+                        </ul>
+                    </article>
+
+                    <article id="sake" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">鮭</h2>
+                        <p><strong class="text-orange-600">ビタミンD</strong>が豊富に含まれており、血中濃度が高いと癌のリスクが下がることが報告されています。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                             <li>血中ビタミンD濃度の上昇は、大腸癌の発症率を2/3に減少させ、全癌死亡者数を29%低下させるとされています。</li>
+                             <li>1日の予防的な推奨摂取量は<strong class="text-orange-600">2000IU（50μg）</strong>で、鮭だけでは2切れ食べる必要があります。サプリメントの併用も推奨されます。</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="flavonol" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">フラボノールが多い食材</h2>
+                        <p>フラボノールは植物色素の一種で、よく摂取している人は、癌の死亡率が<strong class="text-orange-600">42%低下した</strong>ことが報告されています。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                             <li><strong class="font-medium">ケルセチン：</strong>玉ねぎ、アスパラガス、トマト、緑茶</li>
+                             <li><strong class="font-medium">ケンフェロール：</strong>生姜、ネギ、ケール、ほうれん草</li>
+                             <li><strong class="font-medium">ミリセチン：</strong>くるみ、ベリー類、ブドウ</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="umeboshi" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">梅干し</h2>
+                        <p>癌細胞の成長を阻止し、アポトーシス（細胞死）を誘導する効果があります。<strong class="text-orange-600">クエン酸</strong>が癌細胞のエネルギー代謝を阻害し、増殖を抑制します。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>メキシコはOECD国別癌死亡率が最も低く、クエン酸の摂取量が多い国として知られています。</li>
+                            <li>クエン酸はカボス、レモン、キウイなどの柑橘類にも多く含まれます。</li>
+                        </ul>
+                    </article>
+
+                    <article id="whey" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">ホエイプロテイン</h2>
+                        <p>癌患者に対する臨床研究で、抗酸化能力の向上、免疫力の強化、炎症の低下などの効果が確認されています。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>体内のタンパク質状態を示す血清アルブミン値が低いと、術後の合併症発症率や死亡率が上がることが示されています。</li>
+                             <li>肉、魚、卵、大豆などに加え、ホエイプロテインを習慣的に飲むことで十分なタンパク質補給が可能です。</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="aozakana" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">青魚（サバ缶含む）</h2>
+                        <p>豊富な<strong class="text-orange-600">オメガ3脂肪酸</strong>が、癌の原因の一つである慢性炎症を抑制します。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>現代の食生活は炎症を誘発するオメガ6が過剰になりがちです。</li>
+                            <li>オメガ3摂取が多い女性は、乳がんのリスクが低いことが分かっています。</li>
+                             <li>サンマ、イワシ、マサバなどが豊富で、特に安価で保存しやすいサバ缶やイワシ缶が推奨されます。</li>
+                        </ul>
+                    </article>
+                    
+                    <article id="kudamono" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">果物</h2>
+                        <p>果物の摂取は癌のリスクを低下させることが様々な研究で報告されています。特にリンゴ、梨、柑橘系が効果的です。</p>
+                        <div class="bg-red-50 border-l-4 border-red-400 text-red-800 p-4 rounded-r-lg mt-4" role="alert">
+                            <p class="font-bold">注意点</p>
+                             <p>日本人の果物摂取量は推奨量（200?300g）に比べ約100gも不足しています。また、フルーツジュースはNGで、必ず<strong class="font-medium">生の果物</strong>を食べることが推奨されます。</p>
+                        </div>
+                    </article>
+
+                    <article id="nigari" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">にがり</h2>
+                        <p>主成分である<strong class="text-orange-600">塩化マグネシウム</strong>の癌に対する効果が近年注目されています。</p>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                            <li>マグネシウムは現代人が不足しがちなミネラルです。</li>
+                            <li>にがりのマグネシウムはイオン化されており吸収されやすい特徴があります。</li>
+                            <li>お茶やスープに1?2滴、ご飯を炊く時に2合あたり大さじ1杯程度入れるなどの使い方が紹介されています。</li>
+                            <li>「塩化マグネシウム」と表示された高品質なものを選びましょう。</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // DOMが読み込まれたらJavaScriptを実行
+        document.addEventListener('DOMContentLoaded', () => {
+            // 必要な要素を取得
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.spa-content');
+            
+            // アクティブなスタイルをオレンジベースに変更
+            const activeLinkClasses = ['bg-orange-200', 'text-orange-800', 'font-bold'];
+            const inactiveLinkClasses = ['text-gray-600'];
+
+            // 初期表示の設定
+            function initialize() {
+                // 最初のリンクをアクティブにする
+                const firstLink = navLinks[0];
+                firstLink.classList.add(...activeLinkClasses);
+                firstLink.classList.remove(...inactiveLinkClasses);
+
+                // 最初のコンテンツを表示する
+                const firstContentId = firstLink.dataset.target;
+                const firstContent = document.getElementById(firstContentId);
+                if (firstContent) {
+                    firstContent.classList.remove('hidden');
+                }
+            }
+            
+            // ナビゲーションリンクのクリックイベントを設定
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    // aタグのデフォルトの挙動（ページ遷移）をキャンセル
+                    event.preventDefault();
+
+                    // クリックされたリンクのdata-target属性から対象のIDを取得
+                    const targetId = link.dataset.target;
+                    const targetContent = document.getElementById(targetId);
+
+                    // --- コンテンツの表示切り替え ---
+                    // すべてのコンテンツセクションを非表示にする
+                    contentSections.forEach(section => {
+                        section.classList.add('hidden');
+                    });
+
+                    // 対象のコンテンツセクションだけを表示する
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                        // コンテンツエリアのトップにスクロール
+                        document.querySelector('main > div').scrollTo(0, 0);
+                    }
+
+                    // --- ナビゲーションリンクのスタイル切り替え ---
+                    // すべてのリンクからアクティブスタイルを削除
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove(...activeLinkClasses);
+                        navLink.classList.add(...inactiveLinkClasses);
+                    });
+
+                    // クリックされたリンクにアクティブスタイルを適用
+                    link.classList.add(...activeLinkClasses);
+                    link.classList.remove(...inactiveLinkClasses);
+                });
+            });
+
+            // 初期化関数を実行
+            initialize();
+        });
+    </script>
+
+</body>
+</html>

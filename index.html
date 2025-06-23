@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>健康を、もっと身近に。 | 食生活ガイド</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* 日本語フォントと英字フォントの指定 */
+      body {
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      }
+      /* カードのホバーエフェクト */
+      .card-link {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .card-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+      .hero-section {
+        background: linear-gradient(135deg, #f0fdf4, #f3f4f6);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-green-800">
+          <i class="fa-solid fa-seedling mr-2"></i>健康食生活ガイド
+        </div>
+        <nav>
+          <a href="#features" class="text-gray-600 hover:text-orange-600 px-3"
+            >特長</a
+          >
+          <a href="#contents" class="text-gray-600 hover:text-orange-600 px-3"
+            >コンテンツ</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <!-- ヒーローセクション -->
+      <section class="hero-section text-center py-20 md:py-32">
+        <div class="container mx-auto px-6">
+          <h1
+            class="text-4xl md:text-6xl font-bold text-green-800 leading-tight"
+          >
+            健康を、もっと身近に。
+          </h1>
+          <p class="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
+            日々の食事から、未来の健康を作る。専門家が解説する信頼性の高い情報を、分かりやすいSPA形式でお届けします。
+          </p>
+          <a
+            href="#contents"
+            class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full mt-8 text-lg transition-transform transform hover:scale-105"
+          >
+            コンテンツ一覧を見る
+          </a>
+        </div>
+      </section>
+
+      <!-- 特長セクション -->
+      <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800">私たちのこだわり</h2>
+            <p class="text-gray-600 mt-2">
+              信頼できる情報を、最も分かりやすく。
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-6">
+              <div class="text-4xl text-orange-500 mb-4">
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">専門家による解説</h3>
+              <p class="text-gray-600">
+                看護師や医師など、健康のプロフェッショナルによる信頼性の高い解説に基づいています。
+              </p>
+            </div>
+            <div class="p-6">
+              <div class="text-4xl text-orange-500 mb-4">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">科学的根拠に基づく情報</h3>
+              <p class="text-gray-600">
+                最新の研究や論文を基に、エビデンスのある情報のみを厳選してお届けします。
+              </p>
+            </div>
+            <div class="p-6">
+              <div class="text-4xl text-orange-500 mb-4">
+                <i class="fa-solid fa-display"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">直感的なインターフェース</h3>
+              <p class="text-gray-600">
+                SPA（シングルページアプリケーション）形式で、ストレスなく快適に情報を閲覧できます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- コンテンツ一覧セクション -->
+      <section id="contents" class="py-16">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800">注目の健康情報</h2>
+            <p class="text-gray-600 mt-2">気になるトピックからご覧ください。</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- カード: キウイフルーツ -->
+            <a
+              href="./kiwi.html"
+              class="card-link block bg-white p-6 rounded-xl shadow-lg"
+            >
+              <div class="flex flex-col h-full">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
+                  キウイフルーツの健康効果
+                </h2>
+                <p class="text-gray-600 text-sm text-center flex-grow">
+                  9つの驚くべき健康効果と、食べ過ぎによる2つのデメリットを解説します。
+                </p>
+              </div>
+            </a>
+            <!-- カード: 癌予防の食品 -->
+            <a
+              href="./cancer-food.html"
+              class="card-link block bg-white p-6 rounded-xl shadow-lg"
+            >
+              <div class="flex flex-col h-full">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
+                  癌予防に効果的な食品
+                </h2>
+                <p class="text-gray-600 text-sm text-center flex-grow">
+                  癌細胞を消滅させる効果が期待される食品とその具体的な効果をまとめました。
+                </p>
+              </div>
+            </a>
+            <!-- カード: ブルーベリー -->
+            <a
+              href="./blueberry.html"
+              class="card-link block bg-white p-6 rounded-xl shadow-lg"
+            >
+              <div class="flex flex-col h-full">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
+                  ブルーベリーの健康効果
+                </h2>
+                <p class="text-gray-600 text-sm text-center flex-grow">
+                  小さな実に凝縮された10の健康効果と、摂取する上での注意点を解説。
+                </p>
+              </div>
+            </a>
+            <!-- カード: 酒粕 -->
+            <a
+              href="./sakekasu.html"
+              class="card-link block bg-white p-6 rounded-xl shadow-lg"
+            >
+              <div class="flex flex-col h-full">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
+                  酒粕の健康効果と発酵の秘密
+                </h2>
+                <p class="text-gray-600 text-sm text-center flex-grow">
+                  栄養豊富な酒粕の健康効果、発酵の仕組み、アンチエイジングへの影響まで。
+                </p>
+              </div>
+            </a>
+            <!-- カード: 腸内環境 -->
+            <a
+              href="./chokatsu.html"
+              class="card-link block bg-white p-6 rounded-xl shadow-lg"
+            >
+              <div class="flex flex-col h-full">
+                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
+                  腸内環境を整える食事法
+                </h2>
+                <p class="text-gray-600 text-sm text-center flex-grow">
+                  免疫の中心である腸。その環境を整えるための食事法や重要な食材を解説します。
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2025 健康食生活ガイド. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

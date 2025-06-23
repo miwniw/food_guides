@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腸内環境を整える食事法 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 日本語フォントと英字フォントの指定 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        /* スクロールバーのスタイルをオレンジベースに変更 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fdba74; /* tailwind orange-300 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316; /* tailwind orange-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-green-800">最強の食事術で腸内環境を整える</h1>
+            <p class="text-gray-600 mt-2">腸内環境を整えることの重要性とその方法</p>
+        </header>
+
+        <div class="md:grid md:grid-cols-12 md:gap-8">
+            <!-- 左側のナビゲーションメニュー -->
+            <aside class="md:col-span-3 lg:col-span-3 mb-8 md:mb-0">
+                <nav id="spa-nav" class="bg-white p-4 rounded-xl shadow-lg sticky top-8">
+                    <h2 class="text-lg font-bold text-gray-700 mb-4 border-b pb-2">最強の食事術</h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" data-target="video1" class="nav-link block p-3 rounded-md font-medium">1. 腸内環境の重要性</a></li>
+                        <li><a href="#" data-target="video2" class="nav-link block p-3 rounded-md font-medium">2. 毎日摂るべき3食材</a></li>
+                        <li><a href="#" data-target="video3" class="nav-link block p-3 rounded-md font-medium">3. おすすめ発酵食品</a></li>
+                        <li><a href="#" data-target="video4" class="nav-link block p-3 rounded-md font-medium">4. トマトの健康効果</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- 右側のコンテンツエリア -->
+            <main class="md:col-span-9 lg:col-span-9">
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg min-h-[600px]">
+                    
+                    <!-- 動画1: 腸内環境の重要性 -->
+                    <article id="video1" class="spa-content space-y-6">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">1. 腸内環境を整えることの重要性</h2>
+                        <p>腸は免疫の中心であり、免疫細胞の<strong class="text-orange-600">70%から80%</strong>が腸内に配置されています。そのため、腸内環境の乱れは全身の免疫の乱れに直結します。</p>
+                        
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">腸と免疫の深い関係</h3>
+                            <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                                <li>腸は外界と体内をつなぐ唯一の接点であり、小腸の表面積はテニスコート1面分にも及びます。</li>
+                                <li>腸内の慢性的な炎症やリーキーガットは、免疫系を過剰に活性化させ、他の部位の感染症リスクを高めます。</li>
+                                <li>腸内細菌は免疫細胞とコミュニケーションをとり、全身の免疫系に影響を与えています。</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">腸内環境悪化のサイン</h3>
+                             <div class="bg-red-50 border-l-4 border-red-400 text-red-800 p-4 rounded-r-lg" role="alert">
+                                <p class="font-bold">こんな症状はありませんか？</p>
+                                <p class="mt-2">風邪を引きやすい、アレルギー性鼻炎、膀胱炎、脂肪肝、内臓脂肪が多い、頭がぼーっとするなどの症状は、腸内環境の悪化と免疫力低下のサインかもしれません。</p>
+                            </div>
+                        </section>
+                        <p class="pt-4">腸内環境を整えることは、病原菌への抵抗力を高めるだけでなく、心臓病や糖尿病などの慢性疾患から身を守ることにもつながります。</p>
+                    </article>
+
+                    <!-- 動画2: 毎日摂取すべき3つの重要な食材 -->
+                    <article id="video2" class="spa-content space-y-6 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">2. 毎日摂取すべき3つの重要な食材</h2>
+                        <p>腸内環境を整える上で、特に毎日の摂取が推奨される3つの食材を紹介します。</p>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">ニンニクと玉ねぎ</h3>
+                            <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                                <li>腸内細菌の餌となる<strong class="text-orange-600">プレバイオティクス</strong>が豊富です。</li>
+                                <li>含まれる<strong class="font-medium">アリシン</strong>や<strong class="font-medium">有機硫黄化合物</strong>が免疫機能の活性化や抗酸化作用を発揮します。</li>
+                                <li>有効成分を最大限に引き出すには、細かく刻んで10分ほど置いてから調理するのが効果的です。</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">キノコ類</h3>
+                             <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                                <li>豊富な食物繊維<strong class="text-orange-600">ベータグルカン</strong>が腸内細菌の餌となり、腸内の炎症を抑える短鎖脂肪酸の合成に利用されます。</li>
+                                <li>ベータグルカンには免疫系を直接活性化する作用もあります。</li>
+                                <li>シイタケ、エノキ、マイタケなど、どんなキノコでも効果が期待できます。</li>
+                            </ul>
+                        </section>
+                    </article>
+
+                    <!-- 動画3: おすすめ発酵食品 -->
+                    <article id="video3" class="spa-content space-y-6 hidden">
+                         <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">3. 腸内環境を整えるための発酵食品</h2>
+                        <p>日本の発酵食品は、<strong class="text-orange-600">麹菌（日本麹カビ）</strong>という独特のカビを利用しており、日本人の腸に馴染みがあるとされています。</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg">納豆</h4>
+                                <p class="text-gray-700">発酵により栄養価が格段にアップ。血圧降下作用や血液をサラサラにする効果も報告されています。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">味噌</h4>
+                                <p class="text-gray-700">発酵によってタンパク質量が約2倍に増加。胃がんリスクの低減や、動脈硬化、高血圧の予防効果が報告されています。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">米酢（特に黒酢）</h4>
+                                <p class="text-gray-700">アミノ酸が非常に豊富。疲労回復を促進し、コレステロールや中性脂肪を下げる効果も期待できます。</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 border-l-4 border-orange-400 text-orange-800 p-4 rounded-r-lg mt-6" role="alert">
+                            <p class="font-bold">選び方のポイント</p>
+                             <p class="mt-2">添加物の少ないもの、または無添加のものを選び、毎日少しずつ摂取することが大切です。可能であれば、ぬか漬けのように自分で作るのが最も良いとされています。</p>
+                        </div>
+                    </article>
+
+                    <!-- 動画4: トマトの健康効果 -->
+                    <article id="video4" class="spa-content space-y-6 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">4. トマトの健康効果と腸内細菌への影響</h2>
+                        <p>トマトには、強力な抗酸化物質である<strong class="text-orange-600">リコピン</strong>が豊富に含まれています。</p>
+
+                         <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">リコピンの吸収率を上げるコツ</h3>
+                            <p>リコピンは油と一緒に摂取することで吸収率が上がります。トマトサラダにオリーブオイルをかけるなどの工夫が効果的です。</p>
+                        </section>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">腸内細菌への影響</h3>
+                             <p>最近の研究で、トマトの摂取が腸内細菌の組成を良い方向に変化させることが示されました。具体的には、「肥満菌」として知られる菌の比率が減少し、善玉菌のグループが増加したと報告されています。</p>
+                             <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700 mt-2">
+                                 <li>この研究は豚で行われましたが、豚の腸内細菌は人間に非常に近いため、人間にも同様の効果が期待できます。</li>
+                                 <li>トマトは腸にとって良い食材の一つであり、週に数回程度摂取することが推奨されます。</li>
+                             </ul>
+                        </section>
+                         <p class="pt-4">一般的に、赤、紫、黄、緑など、色の濃い野菜を摂取することが、多くの抗酸化物質を取り入れ、腸内細菌を喜ばせることにつながります。</p>
+                    </article>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // DOMが読み込まれたらJavaScriptを実行
+        document.addEventListener('DOMContentLoaded', () => {
+            // 必要な要素を取得
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.spa-content');
+            
+            // アクティブなスタイルをオレンジベースに変更
+            const activeLinkClasses = ['bg-orange-200', 'text-orange-800', 'font-bold'];
+            const inactiveLinkClasses = ['text-gray-600'];
+
+            // 初期表示の設定
+            function initialize() {
+                // 最初のリンクをアクティブにする
+                const firstLink = navLinks[0];
+                firstLink.classList.add(...activeLinkClasses);
+                firstLink.classList.remove(...inactiveLinkClasses);
+
+                // 最初のコンテンツを表示する
+                const firstContentId = firstLink.dataset.target;
+                const firstContent = document.getElementById(firstContentId);
+                if (firstContent) {
+                    firstContent.classList.remove('hidden');
+                }
+            }
+            
+            // ナビゲーションリンクのクリックイベントを設定
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    // aタグのデフォルトの挙動（ページ遷移）をキャンセル
+                    event.preventDefault();
+
+                    // クリックされたリンクのdata-target属性から対象のIDを取得
+                    const targetId = link.dataset.target;
+                    const targetContent = document.getElementById(targetId);
+
+                    // --- コンテンツの表示切り替え ---
+                    // すべてのコンテンツセクションを非表示にする
+                    contentSections.forEach(section => {
+                        section.classList.add('hidden');
+                    });
+
+                    // 対象のコンテンツセクションだけを表示する
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                        // コンテンツエリアのトップにスクロール
+                        document.querySelector('main > div').scrollTo(0, 0);
+                    }
+
+                    // --- ナビゲーションリンクのスタイル切り替え ---
+                    // すべてのリンクからアクティブスタイルを削除
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove(...activeLinkClasses);
+                        navLink.classList.add(...inactiveLinkClasses);
+                    });
+
+                    // クリックされたリンクにアクティブスタイルを適用
+                    link.classList.add(...activeLinkClasses);
+                    link.classList.remove(...inactiveLinkClasses);
+                });
+            });
+
+            // 初期化関数を実行
+            initialize();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブルーベリーの健康効果 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 日本語フォントと英字フォントの指定 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        /* スクロールバーのスタイルをオレンジベースに変更 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fdba74; /* tailwind orange-300 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316; /* tailwind orange-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-green-800">ブルーベリーの奇跡の効果</h1>
+            <p class="text-gray-600 mt-2">看護師の視点から学ぶ健康効果と注意点</p>
+        </header>
+
+        <div class="md:grid md:grid-cols-12 md:gap-8">
+            <!-- 左側のナビゲーションメニュー -->
+            <aside class="md:col-span-3 lg:col-span-3 mb-8 md:mb-0">
+                <nav id="spa-nav" class="bg-white p-4 rounded-xl shadow-lg sticky top-8">
+                    <h2 class="text-lg font-bold text-gray-700 mb-4 border-b pb-2">目次</h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" data-target="overview" class="nav-link block p-3 rounded-md font-medium">概要</a></li>
+                        <li><a href="#" data-target="health-effects" class="nav-link block p-3 rounded-md font-medium">10の健康効果</a></li>
+                        <li><a href="#" data-target="cautions" class="nav-link block p-3 rounded-md font-medium">注意点</a></li>
+                        <li><a href="#" data-target="summary" class="nav-link block p-3 rounded-md font-medium">まとめ</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- 右側のコンテンツエリア -->
+            <main class="md:col-span-9 lg:col-span-9">
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg min-h-[600px]">
+                    <!-- 各セクションのコンテンツ -->
+                    <article id="overview" class="spa-content space-y-4">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">概要</h2>
+                        <p>このページでは、YouTubeチャンネル「食べ物まるっと研究所【看護師が解説】」の動画を参考に、小さく栄養が凝縮されたブルーベリーの健康効果、食べ過ぎによるデメリット、そして1日の摂取目安量について、看護師の視点から解説します。</p>
+                        <div class="bg-orange-50 border-l-4 border-orange-400 text-orange-800 p-4 rounded-r-lg mt-4" role="alert">
+                            <p>ブルーベリーの持つ<strong class="font-medium">10の驚くべき健康効果</strong>と、知っておくべき<strong class="font-medium">注意点</strong>を詳しく掘り下げていきます。</p>
+                        </div>
+                    </article>
+
+                    <article id="health-effects" class="spa-content space-y-6 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">10の健康効果</h2>
+                        <div class="space-y-8">
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">1. 高血圧の予防</h3>
+                                <p>ブルーベリーに含まれる<strong class="text-orange-600">アントシアニン</strong>が血圧の上昇を抑えます。血管を拡張させる一酸化窒素の生成を増やすことで、血圧を有意に低下させることが研究で示されています。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">2. うつの予防</h3>
+                                <p><strong class="text-orange-600">フラボノイド</strong>とアントシアニンが脳の血流を改善し、神経の炎症を軽減することで、うつ症状を和らげ、ポジティブな感情を増加させると報告されています。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">3. 認知機能低下の予防</h3>
+                                <p>アントシアニンが活性酸素から脳細胞を守ります。研究では、ブルーベリーの摂取が脳活動を増加させ、認知老化を<strong class="text-orange-600">最大2.5年遅らせる</strong>可能性が示されています。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">4. がんの予防</h3>
+                                <p>強力な抗酸化作用により、がんの発生や増殖を抑制します。研究では、ブルーベリーの多糖類が腫瘍増殖率を<strong class="text-orange-600">73.4%阻害する</strong>ことが示されています。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">5. 肥満予防</h3>
+                                <p>ポリフェノールが脂肪の蓄積を抑制し、腸内の善玉菌を増やすことで肥満につながる腸内細菌の増殖を抑えます。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">6. 目の健康を守る</h3>
+                                <p>アントシアニンが、視力に必要な<strong class="text-orange-600">ロドプシン</strong>の再合成を助け、視覚機能を改善します。また、紫外線から網膜の細胞を守る働きもあります。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">7. 腸内環境の改善</h3>
+                                <p>ポリフェノールが腸内の<strong class="text-orange-600">ビフィズス菌</strong>を増やし、また豊富な食物繊維が便通を整え、腸内環境を改善します。</p>
+                            </section>
+                             <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">8. 美肌効果</h3>
+                                <p>抗酸化作用で紫外線ダメージを防ぎ、血流改善でハリのある肌を作ります。また、<strong class="text-orange-600">ビタミンC</strong>がシミ・そばかすを予防し、コラーゲン生成をサポートします。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">9. 糖尿病の予防</h3>
+                                <p>アントシアニンがインスリンへの応答能力を高め、食後の血糖値上昇を抑制します。約20万人を対象とした研究で、2型糖尿病のリスクを有意に低下させることが報告されています。</p>
+                            </section>
+                             <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">10. 骨粗しょう症の予防</h3>
+                                <p>含まれる<strong class="text-orange-600">ビタミンK</strong>が骨の形成を助け、カルシウムの骨への沈着を促進します。閉経後の女性の骨量減少を軽減する可能性が示されています。</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article id="cautions" class="spa-content space-y-6 hidden">
+                        <h2 class="text-2xl font-bold text-red-600 border-b-2 border-red-200 pb-2 mb-4">注意点</h2>
+                        <p>体に良いブルーベリーも、過剰な摂取や特定の状況では注意が必要です。</p>
+                        <div class="space-y-8">
+                             <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">食べ過ぎによるデメリット</h3>
+                                <p>食物繊維の摂りすぎで便が硬くなり、かえって便秘になる可能性があります。お腹の調子を崩しやすい人は特に注意が必要です。</p>
+                            </section>
+                             <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">アレルギーの可能性</h3>
+                                <p>まれに口の中のイガイガやかゆみなどのアレルギー症状が出ることがあります。他の果物でアレルギーが出やすい人は慎重に摂取しましょう。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">加工品に注意</h3>
+                                <p>ジャムやソースには大量の甘味料が使われていることが多いため、糖質の摂りすぎに注意が必要です。手作りのものがおすすめです。</p>
+                            </section>
+                            <section>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">果物ジュースのリスク</h3>
+                                <p>ブルーベリーそのものとは異なりますが、果物ジュースの摂取は逆に糖尿病リスクを上げる可能性があるため注意が必要です。</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article id="summary" class="spa-content space-y-4 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">まとめ</h2>
+                        <p>ブルーベリーは、高血圧、うつ、認知機能低下、がん、肥満予防など、多岐にわたる健康効果が期待できるスーパーフルーツです。</p>
+                        <div class="bg-orange-50 border-l-4 border-orange-400 text-orange-800 p-4 rounded-r-lg mt-4" role="alert">
+                            <p class="font-bold">摂取目安量</p>
+                            <p>様々な病気のリスク軽減のためには、<strong class="font-medium">毎日約70g（約35粒）</strong>の摂取が関連しているとされています。厚生労働省は1日200gの果物摂取を推奨しているため、他の果物と合わせて調整すると良いでしょう。</p>
+                        </div>
+                        <h3 class="text-lg font-semibold pt-4 mt-4">選び方と保存法</h3>
+                         <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                             <li><strong class="font-medium text-gray-900">選び方:</strong> ふっくらと丸く皮にハリがあり、ブルーム（表面の白い粉）が均一についているものを選びましょう。</li>
+                             <li><strong class="font-medium text-gray-900">保存法:</strong> 痛みやすいため、すぐに食べない場合は水洗い後に水気をよく拭き取り、<strong class="font-medium">冷凍保存</strong>がおすすめです。</li>
+                         </ul>
+                         <p class="mt-4">何事も適切な量の摂取とバランスが大切です。美味しいブルーベリーを適切に摂取し、健康な体作りを目指しましょう。</p>
+                    </article>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // DOMが読み込まれたらJavaScriptを実行
+        document.addEventListener('DOMContentLoaded', () => {
+            // 必要な要素を取得
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.spa-content');
+            
+            // アクティブなスタイルをオレンジベースに変更
+            const activeLinkClasses = ['bg-orange-200', 'text-orange-800', 'font-bold'];
+            const inactiveLinkClasses = ['text-gray-600'];
+
+            // 初期表示の設定
+            function initialize() {
+                // 最初のリンクをアクティブにする
+                const firstLink = navLinks[0];
+                firstLink.classList.add(...activeLinkClasses);
+                firstLink.classList.remove(...inactiveLinkClasses);
+
+                // 最初のコンテンツを表示する
+                const firstContentId = firstLink.dataset.target;
+                const firstContent = document.getElementById(firstContentId);
+                if (firstContent) {
+                    firstContent.classList.remove('hidden');
+                }
+            }
+            
+            // ナビゲーションリンクのクリックイベントを設定
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    // aタグのデフォルトの挙動（ページ遷移）をキャンセル
+                    event.preventDefault();
+
+                    // クリックされたリンクのdata-target属性から対象のIDを取得
+                    const targetId = link.dataset.target;
+                    const targetContent = document.getElementById(targetId);
+
+                    // --- コンテンツの表示切り替え ---
+                    // すべてのコンテンツセクションを非表示にする
+                    contentSections.forEach(section => {
+                        section.classList.add('hidden');
+                    });
+
+                    // 対象のコンテンツセクションだけを表示する
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                        // コンテンツエリアのトップにスクロール
+                        document.querySelector('main > div').scrollTo(0, 0);
+                    }
+
+                    // --- ナビゲーションリンクのスタイル切り替え ---
+                    // すべてのリンクからアクティブスタイルを削除
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove(...activeLinkClasses);
+                        navLink.classList.add(...inactiveLinkClasses);
+                    });
+
+                    // クリックされたリンクにアクティブスタイルを適用
+                    link.classList.add(...activeLinkClasses);
+                    link.classList.remove(...inactiveLinkClasses);
+                });
+            });
+
+            // 初期化関数を実行
+            initialize();
+        });
+    </script>
+
+</body>
+</html>

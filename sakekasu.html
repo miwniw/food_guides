@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒粕の健康効果 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 日本語フォントと英字フォントの指定 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        /* スクロールバーのスタイルをオレンジベースに変更 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fdba74; /* tailwind orange-300 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316; /* tailwind orange-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-green-800">酒粕のすごい力</h1>
+            <p class="text-gray-600 mt-2">栄養、健康効果から発酵の秘密まで</p>
+        </header>
+
+        <div class="md:grid md:grid-cols-12 md:gap-8">
+            <!-- 左側のナビゲーションメニュー -->
+            <aside class="md:col-span-3 lg:col-span-3 mb-8 md:mb-0">
+                <nav id="spa-nav" class="bg-white p-4 rounded-xl shadow-lg sticky top-8">
+                    <h2 class="text-lg font-bold text-gray-700 mb-4 border-b pb-2">目次</h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" data-target="health-benefits" class="nav-link block p-3 rounded-md font-medium">酒粕の健康効果</a></li>
+                        <li><a href="#" data-target="fermentation" class="nav-link block p-3 rounded-md font-medium">発酵の役割</a></li>
+                        <li><a href="#" data-target="anti-aging" class="nav-link block p-3 rounded-md font-medium">発酵とアンチエイジング</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- 右側のコンテンツエリア -->
+            <main class="md:col-span-9 lg:col-span-9">
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg min-h-[600px]">
+                    
+                    <!-- コンテンツ1: 酒粕の健康効果 -->
+                    <article id="health-benefits" class="spa-content space-y-6">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">酒粕の健康効果について</h2>
+                        <p>酒粕は日本酒を製造する過程でできる発酵食品で、栄養価が高く、さまざまな健康効果が期待されています。</p>
+                        
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">1. 主な栄養素</h3>
+                            <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                                <li><strong class="text-orange-600">たんぱく質：</strong>アミノ酸を多く含み、体の組織を作るのに役立ちます。</li>
+                                <li><strong class="text-orange-600">食物繊維：</strong>腸内環境を整え、便通を改善する効果があります。</li>
+                                <li><strong class="text-orange-600">ビタミンB群：</strong>エネルギー代謝を助け、疲労回復や美肌効果が期待できます。</li>
+                                <li><strong class="text-orange-600">ミネラル：</strong>血圧調整や代謝促進に寄与します。</li>
+                                <li><strong class="text-orange-600">レジスタントプロテイン：</strong>コレステロールの吸収を抑える働きがあります。</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">2. 5つの健康効果</h3>
+                            <div class="space-y-4">
+                                <p><strong>① 腸内環境の改善：</strong>食物繊維やオリゴ糖が善玉菌を増やし、腸内フローラを整えます。</p>
+                                <p><strong>② 免疫力向上：</strong>β-グルカンなどの成分が免疫を活性化し、感染症の予防が期待できます。</p>
+                                <p><strong>③ 美肌・アンチエイジング効果：</strong>アルブチンやフェルラ酸が抗酸化作用を発揮し、シミやしわを予防。保湿効果も期待できます。</p>
+                                <p><strong>④ 血圧やコレステロール値の改善：</strong>ペプチドやレジスタントプロテインが血圧を下げ、コレステロールを抑制します。</p>
+                                <p><strong>⑤ ダイエット・代謝促進：</strong>酵母やビタミンB群が代謝を活性化し、脂肪燃焼を助けます。</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">3. 摂取方法と注意点</h3>
+                            <div class="bg-orange-50 border-l-4 border-orange-400 text-orange-800 p-4 rounded-r-lg" role="alert">
+                                <p class="font-bold">おすすめの摂取方法</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>味噌汁やスープに加える</li>
+                                    <li>甘酒として飲む</li>
+                                    <li>料理の調味料として使う（漬物、粕漬けなど）</li>
+                                    <li>スイーツに活用（クッキー、パンケーキなど）</li>
+                                </ul>
+                            </div>
+                             <div class="bg-red-50 border-l-4 border-red-400 text-red-800 p-4 rounded-r-lg mt-4" role="alert">
+                                <p class="font-bold">注意点</p>
+                                <ul class="list-disc list-inside mt-2">
+                                    <li>アルコールが残っていることがあるため、気になる場合は加熱する。</li>
+                                    <li>高カロリーなので1日50g程度を目安に。</li>
+                                    <li>日本酒にアレルギーがある人は注意。</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </article>
+
+                    <!-- コンテンツ2: 発酵の役割 -->
+                    <article id="fermentation" class="spa-content space-y-6 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">酒粕の製造過程における発酵の役割</h2>
+                        <p>酒粕は、麹菌と酵母菌という2種類の微生物の働きによって生まれる栄養豊富な副産物です。</p>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">1. 麹菌による発酵（糖化作用）</h3>
+                            <p><strong class="text-orange-600">麹菌（Aspergillus oryzae）</strong>は、米に含まれるデンプンを、酵母菌のエネルギー源となるブドウ糖に変える「糖化」という役割を担います。この過程でアミノ酸なども生成され、酒の旨味や栄養価が高まります。</p>
+                            <div class="mt-2 text-sm bg-gray-50 p-3 rounded-md">
+                                <strong>流れ:</strong> 蒸米に麹菌を繁殖させ（麹米）、デンプンを糖に分解させます。
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">2. 酵母菌による発酵（アルコール発酵）</h3>
+                             <p><strong class="text-orange-600">酵母菌（Saccharomyces cerevisiae）</strong>は、麹菌が作った糖分を、アルコールと炭酸ガスに分解します。この発酵中に香り成分やビタミンB群などが豊富に生成されます。</p>
+                             <div class="mt-2 text-sm bg-gray-50 p-3 rounded-md">
+                                <strong>流れ:</strong> 麹米や水などを混ぜた「もろみ」の中で酵母菌がアルコールを生成。もろみを搾ることで、日本酒と酒粕に分かれます。
+                            </div>
+                        </section>
+                        
+                        <section>
+                             <h3 class="text-xl font-semibold text-gray-800 mb-3">まとめ</h3>
+                             <p>酒粕は、「麹菌による糖化」と「酵母菌によるアルコール発酵」という二段階の発酵を経て生まれます。この発酵過程で生成される多様な成分が、酒粕の高い健康効果の源となっています。</p>
+                        </section>
+                    </article>
+
+                    <!-- コンテンツ3: 発酵とアンチエイジング -->
+                    <article id="anti-aging" class="spa-content space-y-6 hidden">
+                        <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">発酵による米の栄養素変化とアンチエイジング効果</h2>
+                        <p>発酵は、米の栄養価を大きく向上させ、アンチエイジングに有効な成分を豊富に生み出します。</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg">① ビタミンB群の増加</h4>
+                                <p class="text-gray-700">エネルギー代謝や細胞の再生を助け、皮膚のターンオーバーを促進。シワやくすみの改善に寄与します。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">② アミノ酸の増加</h4>
+                                <p class="text-gray-700">保湿効果や細胞修復、メラニン生成抑制などの働きで、肌のハリや透明感を維持します。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">③ ペプチドの生成</h4>
+                                <p class="text-gray-700">活性酸素を除去し、血流を改善することで、くすみを防ぎ、老化の原因となる酸化ストレスを軽減します。</p>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-lg">④ フェルラ酸の生成</h4>
+                                <p class="text-gray-700">紫外線によるダメージやメラニン生成を抑制し、シミやシワのリスクを軽減します。</p>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-lg">⑤ レジスタントプロテインの生成</h4>
+                                <p class="text-gray-700">コレステロールを低下させ、血管の老化を防ぎ、生活習慣病の予防に役立ちます。</p>
+                            </div>
+                        </div>
+
+                         <div class="bg-orange-50 border-l-4 border-orange-400 text-orange-800 p-4 rounded-r-lg mt-6" role="alert">
+                            <p class="font-bold">まとめ：発酵がもたらすアンチエイジング効果</p>
+                             <p class="mt-2">酒粕は発酵の力で、<strong class="font-medium">美肌効果、抗酸化作用、血流改善、生活習慣病予防</strong>など、多角的にアンチエイジングをサポートします。日常的な摂取で、肌の若々しさを保ち、老化の進行を遅らせることが期待できます。</p>
+                        </div>
+                    </article>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // DOMが読み込まれたらJavaScriptを実行
+        document.addEventListener('DOMContentLoaded', () => {
+            // 必要な要素を取得
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.spa-content');
+            
+            // アクティブなスタイルをオレンジベースに変更
+            const activeLinkClasses = ['bg-orange-200', 'text-orange-800', 'font-bold'];
+            const inactiveLinkClasses = ['text-gray-600'];
+
+            // 初期表示の設定
+            function initialize() {
+                // 最初のリンクをアクティブにする
+                const firstLink = navLinks[0];
+                firstLink.classList.add(...activeLinkClasses);
+                firstLink.classList.remove(...inactiveLinkClasses);
+
+                // 最初のコンテンツを表示する
+                const firstContentId = firstLink.dataset.target;
+                const firstContent = document.getElementById(firstContentId);
+                if (firstContent) {
+                    firstContent.classList.remove('hidden');
+                }
+            }
+            
+            // ナビゲーションリンクのクリックイベントを設定
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    // aタグのデフォルトの挙動（ページ遷移）をキャンセル
+                    event.preventDefault();
+
+                    // クリックされたリンクのdata-target属性から対象のIDを取得
+                    const targetId = link.dataset.target;
+                    const targetContent = document.getElementById(targetId);
+
+                    // --- コンテンツの表示切り替え ---
+                    // すべてのコンテンツセクションを非表示にする
+                    contentSections.forEach(section => {
+                        section.classList.add('hidden');
+                    });
+
+                    // 対象のコンテンツセクションだけを表示する
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                        // コンテンツエリアのトップにスクロール
+                        document.querySelector('main > div').scrollTo(0, 0);
+                    }
+
+                    // --- ナビゲーションリンクのスタイル切り替え ---
+                    // すべてのリンクからアクティブスタイルを削除
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove(...activeLinkClasses);
+                        navLink.classList.add(...inactiveLinkClasses);
+                    });
+
+                    // クリックされたリンクにアクティブスタイルを適用
+                    link.classList.add(...activeLinkClasses);
+                    link.classList.remove(...inactiveLinkClasses);
+                });
+            });
+
+            // 初期化関数を実行
+            initialize();
+        });
+    </script>
+
+</body>
+</html>
