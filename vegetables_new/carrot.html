@@ -25,40 +25,94 @@
       }
       /* アクティブなナビゲーションボタンのスタイル */
       .nav-btn-active {
-        background-color: #16a34a; /* green-600 */
+        background-color: #10b981; /* emerald-500 */
         color: white;
+      }
+      /* グローバルヘッダーの高さ分、bodyの上部に余白を追加 */
+      body {
+        padding-top: 64px; /* グローバルヘッダーの高さ(h-16) */
       }
     </style>
   </head>
   <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto">
-      <!-- 「一覧へ」ボタンをページ最上部のナビゲーションとして配置 -->
-      <nav class="bg-gray-100">
-        <div class="p-4 max-w-5xl mx-auto">
-          <a
-            href="../index_sub.html"
-            class="inline-block bg-orange-200 hover:bg-orange-300 text-orange-900 font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            <i class="fas fa-arrow-left mr-1"></i>
-            一覧へ
-          </a>
-        </div>
-      </nav>
+    <!-- グローバルメニューの背景色と文字色を変更 -->
+    <header class="bg-green-700 shadow-md fixed top-0 left-0 right-0 z-50 h-16">
+      <div
+        class="container mx-auto px-4 flex justify-between items-center h-full"
+      >
+        <!-- 左寄せ: サイトタイトル -->
+        <a href="../index.html" class="text-xl font-bold text-white">
+          食と健康
+        </a>
+        <!-- 右寄せ: ナビゲーションメニュー -->
+        <nav>
+          <!-- PC向けメニュー -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a
+              href="../index.html"
+              class="text-gray-200 hover:text-white transition"
+              >ホーム</a
+            >
+            <a
+              href="../index_sub.html"
+              class="text-gray-200 hover:text-white transition"
+              >ライブラリ</a
+            >
+            <a
+              href="../contact.html"
+              class="text-gray-200 hover:text-white transition"
+              >問い合わせ</a
+            >
+          </div>
+          <!-- モバイル向けハンバーガーボタン -->
+          <div class="md:hidden">
+            <button
+              id="hamburger-btn"
+              class="text-white hover:text-gray-200 focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- モバイル向けメニューパネル -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-green-700 shadow-lg absolute top-16 left-0 w-full"
+      >
+        <a
+          href="../index.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >ホーム</a
+        >
+        <a
+          href="../index_sub.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >ライブラリ</a
+        >
+        <a
+          href="../contact.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >問い合わせ</a
+        >
+      </div>
+    </header>
 
-      <!-- ヘッダーの縦の間隔を調整 -->
-      <header class="text-center px-4 md:px-8 pt-4 pb-4">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600">
+    <div class="container mx-auto">
+      <!-- ページタイトルヘッダー -->
+      <header class="text-center px-4 md:px-8 pt-8 pb-4">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-600">
           人参の驚くべき力
         </h1>
         <p class="text-xs sm:text-sm text-gray-600 mt-2">
-          プロが解説する9つの健康効果と食べ方のコツ
+          専門家が解説する9つの健康効果と食べ方のコツ
         </p>
       </header>
 
       <div class="p-4 md:p-8 pt-0">
-        <!-- ナビゲーションエリアの縦の間隔を調整 -->
+        <!-- セクションナビゲーションエリア -->
         <div
-          class="mb-6 p-4 bg-white rounded-xl shadow-md sticky top-4 z-10 max-w-3xl mx-auto"
+          class="mb-6 p-4 bg-white rounded-xl shadow-md sticky top-[80px] z-10 max-w-3xl mx-auto"
         >
           <!-- モバイル向けドロップダウン (xl未満で表示) -->
           <div class="relative xl:hidden">
@@ -141,19 +195,19 @@
             <!-- 概要ページ -->
             <article id="page-overview" class="page-content space-y-6">
               <h2
-                class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-3"
+                class="text-2xl font-bold text-emerald-600 border-b-2 border-emerald-200 pb-3"
               >
                 概要
               </h2>
               <p>
-                人参は古くから生薬としても用いられ、知られざる驚くべき健康効果が9つあります。しかし、食べすぎには注意が必要で、デメリットも存在します。この解説では、論文や専門機関の研究に基づき、人参で得られる健康効果、一日の摂取目安量、そして食べ方のポイントをプロの視点から詳しく説明します。
+                人参は古くから生薬としても用いられ、知られざる驚くべき健康効果が9つあります。しかし、食べすぎには注意が必要で、デメリットも存在します。この解説では、論文や専門機関の研究に基づき、人参で得られる健康効果、一日の摂取目安量、そして食べ方のポイントを専門家の視点から詳しく説明します。
               </p>
             </article>
 
             <!-- 健康効果ページ -->
             <article id="page-effects" class="page-content hidden space-y-8">
               <h2
-                class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+                class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3"
               >
                 9つの健康効果
               </h2>
@@ -161,7 +215,7 @@
                 <section>
                   <h3 class="font-bold text-lg">1. 肝臓の保護</h3>
                   <p>
-                    人参に含まれる<strong class="font-bold text-orange-600"
+                    人参に含まれる<strong class="font-bold text-amber-600"
                       >カロテノイド</strong
                     >は、抗酸化作用を持ち、肝臓の酸化ストレスを軽減し、肝臓を保護する効果があります。
                   </p>
@@ -169,9 +223,9 @@
                 <section>
                   <h3 class="font-bold text-lg">2. 免疫力向上</h3>
                   <p>
-                    <strong class="font-bold text-orange-600">β-カロテン</strong
+                    <strong class="font-bold text-amber-600">β-カロテン</strong
                     >は体内でビタミンAに変換され、皮膚や粘膜の健康を保ちます。また、<strong
-                      class="font-bold text-orange-600"
+                      class="font-bold text-amber-600"
                       >ペクチン</strong
                     >は腸内環境を整え、免疫力を高めます。
                   </p>
@@ -179,9 +233,9 @@
                 <section>
                   <h3 class="font-bold text-lg">3. 認知機能の低下を防ぐ</h3>
                   <p>
-                    人参に含まれる<strong class="font-bold text-orange-600"
+                    人参に含まれる<strong class="font-bold text-amber-600"
                       >β-カロテン</strong
-                    >や<strong class="font-bold text-orange-600"
+                    >や<strong class="font-bold text-amber-600"
                       >α-カロテン</strong
                     >は、長期的に摂取することで認知機能の低下を防ぐ効果があります。
                   </p>
@@ -189,9 +243,9 @@
                 <section>
                   <h3 class="font-bold text-lg">4. 心血管疾患の予防</h3>
                   <p>
-                    <strong class="font-bold text-orange-600">カリウム</strong
+                    <strong class="font-bold text-amber-600">カリウム</strong
                     >が血圧の上昇を抑え、<strong
-                      class="font-bold text-orange-600"
+                      class="font-bold text-amber-600"
                       >β-カロテン</strong
                     >の抗酸化作用が血管の健康を守ります。
                   </p>
@@ -199,8 +253,8 @@
                 <section>
                   <h3 class="font-bold text-lg">5. 目の健康を保護</h3>
                   <p>
-                    <strong class="font-bold text-orange-600">ルテイン</strong
-                    >と<strong class="font-bold text-orange-600"
+                    <strong class="font-bold text-amber-600">ルテイン</strong
+                    >と<strong class="font-bold text-amber-600"
                       >ゼアキサンチン</strong
                     >がブルーライトなどの有害な光から網膜を守り、目の病気を予防します。
                   </p>
@@ -208,16 +262,16 @@
                 <section>
                   <h3 class="font-bold text-lg">6. 癌の予防</h3>
                   <p>
-                    <strong class="font-bold text-orange-600">β-カロテン</strong
+                    <strong class="font-bold text-amber-600">β-カロテン</strong
                     >の強い抗酸化作用により、癌の発生や増殖に関わる活性酸素の働きを抑制します。
                   </p>
                 </section>
                 <section>
                   <h3 class="font-bold text-lg">7. 腎臓の保護</h3>
                   <p>
-                    <strong class="font-bold text-orange-600"
+                    <strong class="font-bold text-amber-600"
                       >カロテノイド</strong
-                    >や<strong class="font-bold text-orange-600"
+                    >や<strong class="font-bold text-amber-600"
                       >ポリフェノール</strong
                     >が、抗酸化作用により体内の酸化ストレスを減らし、腎臓の細胞を保護します。
                   </p>
@@ -225,9 +279,9 @@
                 <section>
                   <h3 class="font-bold text-lg">8. 美肌効果</h3>
                   <p>
-                    <strong class="font-bold text-orange-600">β-カロテン</strong
+                    <strong class="font-bold text-amber-600">β-カロテン</strong
                     >が皮膚や粘膜の健康を保ち、<strong
-                      class="font-bold text-orange-600"
+                      class="font-bold text-amber-600"
                       >ビタミンC</strong
                     >がコラーゲンの合成をサポートすることで、肌のハリや潤いを保ちます。
                   </p>
@@ -235,9 +289,9 @@
                 <section>
                   <h3 class="font-bold text-lg">9. 便秘解消</h3>
                   <p>
-                    <strong class="font-bold text-orange-600"
+                    <strong class="font-bold text-amber-600"
                       >不溶性食物繊維</strong
-                    >と<strong class="font-bold text-orange-600"
+                    >と<strong class="font-bold text-amber-600"
                       >水溶性食物繊維</strong
                     >の両方が含まれており、便通を促し腸内環境を整えます。
                   </p>
@@ -273,11 +327,11 @@
             <!-- まとめ・食べ方ページ -->
             <article id="page-summary" class="page-content hidden space-y-8">
               <h2
-                class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+                class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3"
               >
                 まとめと食べ方のコツ
               </h2>
-              <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-300">
+              <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-400">
                 <h3 class="font-bold text-lg text-pink-600">
                   美味しい人参の選び方
                 </h3>
@@ -288,9 +342,9 @@
                 </ul>
               </div>
               <div
-                class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-300 mt-6"
+                class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400 mt-6"
               >
-                <h3 class="font-bold text-lg text-orange-600">
+                <h3 class="font-bold text-lg text-amber-600">
                   食べ方のポイント
                 </h3>
                 <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700">
@@ -313,7 +367,7 @@
                 </ul>
               </div>
               <p class="text-red-500 mt-6">
-                どのような食材でも適切な量の摂取とバランスが大切です。特定の疾患がある場合は、プロの指示のもとで摂取するようにしてください。
+                どのような食材でも適切な量の摂取とバランスが大切です。特定の疾患がある場合は、医師の指示のもとで摂取するようにしてください。
               </p>
             </article>
           </div>
@@ -323,6 +377,15 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
+        // --- グローバルメニューの制御 ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- SPAコンテンツの制御 ---
         const desktopNavButtons = document.querySelectorAll('.nav-btn');
         const mobileNavLinks = document.querySelectorAll('.nav-btn-mobile');
         const contentSections = document.querySelectorAll('.page-content');
@@ -333,17 +396,14 @@
         const dropdownPanel = document.getElementById('dropdown-panel');
 
         function switchContent(targetId) {
-          // すべてのコンテンツを非表示
           contentSections.forEach((section) => {
             section.classList.add('hidden');
           });
-          // 対象のコンテンツを表示
           const targetContent = document.getElementById(targetId);
           if (targetContent) {
             targetContent.classList.remove('hidden');
           }
 
-          // PC用ボタンのスタイル更新
           desktopNavButtons.forEach((btn) => {
             btn.classList.remove('nav-btn-active');
             btn.classList.add(
@@ -361,14 +421,12 @@
             }
           });
 
-          // ドロップダウンのラベルを更新
           const activeLink = document.querySelector(
             `.nav-btn-mobile[data-target="${targetId}"]`
           );
           if (activeLink) {
             dropdownLabel.textContent = activeLink.textContent;
           }
-          // ページトップにスクロール
           window.scrollTo(0, 0);
         }
 
@@ -387,7 +445,6 @@
           });
         });
 
-        // ドロップダウン開閉
         if (dropdownBtn) {
           dropdownBtn.addEventListener('click', () => {
             dropdownPanel.classList.toggle('hidden');
@@ -395,7 +452,6 @@
           });
         }
 
-        // ドロップダウン外クリックで閉じる
         window.addEventListener('click', (e) => {
           if (
             dropdownBtn &&
@@ -409,7 +465,6 @@
           }
         });
 
-        // 初期表示
         switchContent('page-overview');
       });
     </script>
