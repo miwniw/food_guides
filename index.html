@@ -1,213 +1,359 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>健康を、もっと身近に。 | 食生活ガイド</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康探究ライブラリ</title>
     <!-- Tailwind CSSをCDNから読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Inter)を読み込み -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Google Fonts (Noto Sans JP)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      /* 日本語フォントと英字フォントの指定 */
-      body {
-        font-family: 'Inter', 'Noto Sans JP', sans-serif;
-      }
-      /* カードのホバーエフェクト */
-      .card-link {
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-      }
-      .card-link:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-          0 4px 6px -4px rgb(0 0 0 / 0.1);
-      }
-      .hero-section {
-        background: linear-gradient(135deg, #f0fdf4, #f3f4f6);
-      }
+        /* 日本語フォントの指定 */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8fafc; /* cool-gray-50 */
+        }
+        /* カードのホバーエフェクト */
+        .card-link {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px -5px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+        }
+        /* アクティブなフィルターボタンのスタイル */
+        .filter-btn-active {
+            background-color: #10B981; /* emerald-500 */
+            color: white;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+        }
+        /* ヒーローセクションのグラデーション */
+        .hero-gradient {
+            background-image: linear-gradient(135deg, #ecfdf5 0%, #fef3c7 100%);
+        }
     </style>
-  </head>
-  <body class="bg-gray-100 text-gray-800">
+</head>
+<body class="text-gray-700">
+
     <!-- ヘッダー -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <div
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <div class="text-2xl font-bold text-green-800">
-          <i class="fa-solid fa-seedling mr-2"></i>健康食生活ガイド
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="py-4 flex justify-between items-center">
+                <div class="text-xl font-bold text-green-700">
+                    <i class="fas fa-book-medical mr-2"></i>食と健康ライブラリ
+                </div>
+                <!-- PC向けナビゲーション -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm">
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition">サイトの特長</a>
+                    <a href="#library" class="text-gray-600 hover:text-green-600 transition">ライブラリ</a>
+                </nav>
+                <!-- モバイル向けハンバーガーボタン -->
+                <div class="md:hidden">
+                    <button id="hamburger-btn" class="text-gray-600 hover:text-green-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+             <!-- モバイル向けメニューパネル -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#features" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded">サイトの特長</a>
+                <a href="#library" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded">ライブラリ</a>
+            </div>
         </div>
-        <nav>
-          <a href="#features" class="text-gray-600 hover:text-orange-600 px-3"
-            >特長</a
-          >
-          <a href="#contents" class="text-gray-600 hover:text-orange-600 px-3"
-            >コンテンツ</a
-          >
-        </nav>
-      </div>
     </header>
 
     <!-- メインコンテンツ -->
     <main>
-      <!-- ヒーローセクション -->
-      <section class="hero-section text-center py-20 md:py-32">
-        <div class="container mx-auto px-6">
-          <h1
-            class="text-4xl md:text-6xl font-bold text-green-800 leading-tight"
-          >
-            健康を、もっと身近に。
-          </h1>
-          <p class="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-            日々の食事から、未来の健康を作る。専門家が解説する信頼性の高い情報を、分かりやすいSPA形式でお届けします。
-          </p>
-          <a
-            href="#contents"
-            class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full mt-8 text-lg transition-transform transform hover:scale-105"
-          >
-            コンテンツ一覧を見る
-          </a>
-        </div>
-      </section>
+        <!-- ヒーローセクション -->
+        <section class="hero-gradient text-center py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">食と健康の羅針盤</h1>
+                <p class="text-lg text-gray-600 mt-5 max-w-2xl mx-auto text-left">専門的な知見を誰にでも分かりやすく。あなたの「知りたい」が、ここにあります。</p>
+                <a href="./index_sub.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-full mt-10 text-lg transition-transform transform hover:scale-105 shadow-lg">
+                    ライブラリを探索する
+                </a>
+            </div>
+        </section>
 
-      <!-- 特長セクション -->
-      <section id="features" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800">私たちのこだわり</h2>
-            <p class="text-gray-600 mt-2">
-              信頼できる情報を、最も分かりやすく。
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="p-6">
-              <div class="text-4xl text-orange-500 mb-4">
-                <i class="fa-solid fa-user-doctor"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-2">専門家による解説</h3>
-              <p class="text-gray-600">
-                看護師や医師など、健康のプロフェッショナルによる信頼性の高い解説に基づいています。
-              </p>
+        <!-- 特長セクション -->
+        <section id="features" class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold text-gray-800">私たちのこだわり</h2>
+                     <p class="text-gray-600 mt-2">信頼できる情報を、最も分かりやすく。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="p-6 text-center">
+                        <div class="text-4xl text-green-500 mb-4"><i class="fas fa-microscope"></i></div>
+                        <h3 class="text-xl font-bold mb-2">アカデミックな信頼性</h3>
+                        <p class="text-gray-600 text-sm text-left">全てのコンテンツは、最新の論文や研究、専門機関の報告に基づいています。</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="text-4xl text-green-500 mb-4"><i class="fas fa-layer-group"></i></div>
+                        <h3 class="text-xl font-bold mb-2">網羅的なコンテンツ</h3>
+                        <p class="text-gray-600 text-sm text-left">特定の食材から健康の知識まで、100を超える多様なテーマを深く掘り下げています。</p>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="text-4xl text-green-500 mb-4"><i class="fas fa-hand-pointer"></i></div>
+                        <h3 class="text-xl font-bold mb-2">直感的な操作性</h3>
+                        <p class="text-gray-600 text-sm text-left">高度な情報をストレスなく閲覧できるよう、最適化されたSPA形式で提供します。</p>
+                    </div>
+                </div>
             </div>
-            <div class="p-6">
-              <div class="text-4xl text-orange-500 mb-4">
-                <i class="fa-solid fa-microscope"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-2">科学的根拠に基づく情報</h3>
-              <p class="text-gray-600">
-                最新の研究や論文を基に、エビデンスのある情報のみを厳選してお届けします。
-              </p>
-            </div>
-            <div class="p-6">
-              <div class="text-4xl text-orange-500 mb-4">
-                <i class="fa-solid fa-display"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-2">直感的なインターフェース</h3>
-              <p class="text-gray-600">
-                SPA（シングルページアプリケーション）形式で、ストレスなく快適に情報を閲覧できます。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+        
+        <!-- ライブラリセクション -->
+        <section id="library" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold text-gray-800">ライブラリ</h2>
+                     <p class="text-gray-500 mt-2">検索やカテゴリ分類で、目的の情報へ素早くアクセスできます。</p>
+                </div>
+                <!-- 検索・フィルター機能 -->
+                <div class="mb-8 p-4 bg-white rounded-xl shadow-md sticky top-[68px] z-40">
+                    <div class="flex flex-col xl:flex-row xl:items-center gap-4">
+                        <div class="w-full xl:w-1/3">
+                            <div class="relative">
+                                <input type="search" id="search-box" placeholder="キーワード検索 (例: りんご)" class="w-full pl-4 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <i class="fas fa-search text-gray-400"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="w-full xl:w-2/3">
+                             <div class="relative xl:hidden">
+                                <button id="dropdown-btn" class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center">
+                                    <span id="dropdown-label" class="font-medium">すべてのカテゴリ</span>
+                                    <i id="dropdown-icon" class="fas fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div id="dropdown-panel" class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-30 border">
+                                    <a href="#" class="filter-btn-mobile block px-4 py-2 text-sm" data-category="all">すべて</a>
+                                    <a href="#" class="filter-btn-mobile block px-4 py-2 text-sm" data-category="fruit">果物</a>
+                                    <a href="#" class="filter-btn-mobile block px-4 py-2 text-sm" data-category="vegetable">野菜</a>
+                                    <a href="#" class="filter-btn-mobile block px-4 py-2 text-sm" data-category="meat-fish">肉と魚</a>
+                                    <a href="#" class="filter-btn-mobile block px-4 py-2 text-sm" data-category="other">その他食材</a>
+                                    <a href="#" class="filter-btn-mobile block px-4 py-2 text-sm" data-category="knowledge">健康の知識</a>
+                                    <a href="#" class="filter-btn-mobile block px-4 py-2 text-sm" data-category="philosophy">哲学・名言</a>
+                                </div>
+                            </div>
+                            <div class="hidden xl:flex flex-wrap items-center gap-2">
+                                <button class="filter-btn filter-btn-active px-4 py-1.5 text-sm font-medium rounded-full" data-category="all">すべて</button>
+                                <button class="filter-btn px-4 py-1.5 text-sm font-medium bg-white text-gray-600 rounded-full border hover:bg-gray-100" data-category="fruit">果物</button>
+                                <button class="filter-btn px-4 py-1.5 text-sm font-medium bg-white text-gray-600 rounded-full border hover:bg-gray-100" data-category="vegetable">野菜</button>
+                                <button class="filter-btn px-4 py-1.5 text-sm font-medium bg-white text-gray-600 rounded-full border hover:bg-gray-100" data-category="meat-fish">肉と魚</button>
+                                <button class="filter-btn px-4 py-1.5 text-sm font-medium bg-white text-gray-600 rounded-full border hover:bg-gray-100" data-category="other">その他食材</button>
+                                <button class="filter-btn px-4 py-1.5 text-sm font-medium bg-white text-gray-600 rounded-full border hover:bg-gray-100" data-category="knowledge">健康の知識</button>
+                                <button class="filter-btn px-4 py-1.5 text-sm font-medium bg-white text-gray-600 rounded-full border hover:bg-gray-100" data-category="philosophy">哲学・名言</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- コンテンツ一覧セクション -->
-      <section id="contents" class="py-16">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800">注目の健康情報</h2>
-            <p class="text-gray-600 mt-2">気になるトピックからご覧ください。</p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- カード: キウイフルーツ -->
-            <a
-              href="./kiwi.html"
-              class="card-link block bg-white p-6 rounded-xl shadow-lg"
-            >
-              <div class="flex flex-col h-full">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
-                  キウイフルーツの健康効果
-                </h2>
-                <p class="text-gray-600 text-sm text-center flex-grow">
-                  9つの驚くべき健康効果と、食べ過ぎによる2つのデメリットを解説します。
-                </p>
-              </div>
-            </a>
-            <!-- カード: 癌予防の食品 -->
-            <a
-              href="./cancer-food.html"
-              class="card-link block bg-white p-6 rounded-xl shadow-lg"
-            >
-              <div class="flex flex-col h-full">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
-                  癌予防に効果的な食品
-                </h2>
-                <p class="text-gray-600 text-sm text-center flex-grow">
-                  癌細胞を消滅させる効果が期待される食品とその具体的な効果をまとめました。
-                </p>
-              </div>
-            </a>
-            <!-- カード: ブルーベリー -->
-            <a
-              href="./blueberry.html"
-              class="card-link block bg-white p-6 rounded-xl shadow-lg"
-            >
-              <div class="flex flex-col h-full">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
-                  ブルーベリーの健康効果
-                </h2>
-                <p class="text-gray-600 text-sm text-center flex-grow">
-                  小さな実に凝縮された10の健康効果と、摂取する上での注意点を解説。
-                </p>
-              </div>
-            </a>
-            <!-- カード: 酒粕 -->
-            <a
-              href="./sakekasu.html"
-              class="card-link block bg-white p-6 rounded-xl shadow-lg"
-            >
-              <div class="flex flex-col h-full">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
-                  酒粕の健康効果と発酵の秘密
-                </h2>
-                <p class="text-gray-600 text-sm text-center flex-grow">
-                  栄養豊富な酒粕の健康効果、発酵の仕組み、アンチエイジングへの影響まで。
-                </p>
-              </div>
-            </a>
-            <!-- カード: 腸内環境 -->
-            <a
-              href="./chokatsu.html"
-              class="card-link block bg-white p-6 rounded-xl shadow-lg"
-            >
-              <div class="flex flex-col h-full">
-                <h2 class="text-xl font-bold text-gray-800 text-center mb-2">
-                  腸内環境を整える食事法
-                </h2>
-                <p class="text-gray-600 text-sm text-center flex-grow">
-                  免疫の中心である腸。その環境を整えるための食事法や重要な食材を解説します。
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
+                <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Cards will be dynamically inserted here by JavaScript -->
+                </div>
+                 <!-- ページネーション -->
+                <div id="pagination-controls" class="flex justify-center items-center mt-12 space-x-2"></div>
+                <!-- 検索結果がない場合の表示 -->
+                <div id="no-results" class="hidden text-center py-16">
+                    <i class="fas fa-inbox text-5xl text-gray-300"></i>
+                    <p class="mt-4 text-gray-500">該当するコンテンツが見つかりませんでした。</p>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!-- フッター -->
+        
     <footer class="bg-gray-800 text-white py-8">
-      <div class="container mx-auto px-6 text-center">
-        <p>&copy; 2025 健康食生活ガイド. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
+        <div class="container mx-auto px-6 text-center text-sm text-gray-400">
+            <p>&copy; 2025 食と健康ライブラリ. All rights reserved.</p>
+        </footer>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- データ ---
+    const allContents = [
+        { href: "./apple-spa.html", category: "fruit", title: "りんごの健康効果", description: "「1日1個のりんごは医者を遠ざける」は本当？12の健康効果と注意点を詳しく見ていきましょう。", keywords: "りんご 医者 12の健康効果 注意点", date: "2024-05-20" },
+        { href: "./carrot-spa.html", category: "vegetable", title: "人参の健康効果", description: "肝臓保護から美肌効果まで。9つの驚くべき効果と、栄養を逃さない食べ方のコツを解説します。", keywords: "人参 9つの健康効果 食べ方", date: "2024-05-22" },
+        { href: "./shiitake-spa.html", category: "vegetable", title: "椎茸の健康効果", description: "癌予防からアンチエイジングまで。日本の食卓に欠かせない椎茸の、知られざる10の力を解説します。", keywords: "椎茸 10の力 癌予防 アンチエイジング", date: "2024-05-18" },
+        { href: "./inflammation-spa.html", category: "knowledge", title: "慢性炎症を抑える食事", description: "万病のもと「慢性炎症」。動脈を綺麗にし、健康長寿を促すための食事術を専門家が解説します。", keywords: "慢性炎症 動脈硬化 健康長寿 食事術", date: "2024-05-25" },
+        { href: "./hippocrates-spa.html", category: "philosophy", title: "ヒポクラテスの名言", description: "「医学の父」が遺した、現代にも通じる健康の哲学。食と健康に関する9つの名言を解説します。", keywords: "ヒポクラテス 医学の父 哲学 9つの名言", date: "2024-05-15" },
+        { href: "#", category: "fruit", title: "ブルーベリーと目の健康", description: "アントシアニンが豊富。現代人の目の疲れを癒すブルーベリーの力に迫ります。", keywords: "ブルーベリー アントシアニン 目の疲れ", date: "2024-05-10" },
+        { href: "#", category: "meat-fish", title: "青魚のオメガ3", description: "サラサラ血液の鍵、EPA・DHA。サバやイワシを効果的に食生活に取り入れる方法。", keywords: "青魚 オメガ3 EPA DHA サバ イワシ", date: "2024-05-12" },
+        { href: "#", category: "other", title: "ナッツの栄養価", description: "アーモンド、くるみ、カシューナッツ。それぞれ異なる栄養と健康効果を解説します。", keywords: "ナッツ アーモンド くるみ ビタミンE", date: "2024-05-11" },
+        { href: "#", category: "knowledge", title: "睡眠と食生活の関係", description: "質の高い睡眠は食事から。睡眠をサポートする栄養素と、避けるべき食事とは。", keywords: "睡眠 食事 トリプトファン グリシン", date: "2024-04-30" },
+        { href: "#", category: "other", title: "緑茶とカテキンの力", description: "日本のスーパーフード、緑茶。カテキンがもたらす抗酸化作用と健康効果のすべて。", keywords: "緑茶 カテキン 抗酸化作用", date: "2024-04-28" },
+    ];
+
+    // --- DOM要素 ---
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const searchBox = document.getElementById('search-box');
+    const cardContainer = document.getElementById('card-container');
+    const noResults = document.getElementById('no-results');
+    const paginationControls = document.getElementById('pagination-controls');
+    
+    const desktopFilterButtons = document.querySelectorAll('.hidden.xl\\:flex .filter-btn');
+    const dropdownBtn = document.getElementById('dropdown-btn');
+    const dropdownLabel = document.getElementById('dropdown-label');
+    const dropdownIcon = document.getElementById('dropdown-icon');
+    const dropdownPanel = document.getElementById('dropdown-panel');
+    const mobileFilterLinks = document.querySelectorAll('.filter-btn-mobile');
+
+    // --- 状態管理 ---
+    let activeCategory = 'all';
+    let currentPage = 1;
+    const itemsPerPage = 8;
+
+    // --- カテゴリごとの色マッピング ---
+    const categoryColors = {
+        fruit: 'border-pink-300',
+        vegetable: 'border-green-300',
+        'meat-fish': 'border-blue-300',
+        other: 'border-yellow-300',
+        knowledge: 'border-orange-300',
+        philosophy: 'border-violet-300',
+    };
+
+    // --- 主要な関数 ---
+    function renderCards(items) {
+        cardContainer.innerHTML = '';
+        if (items.length === 0) {
+            noResults.style.display = 'block';
+            paginationControls.innerHTML = '';
+            return;
+        }
+        noResults.style.display = 'none';
+
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const pageItems = items.slice(startIndex, endIndex);
+
+        pageItems.forEach(item => {
+            const cardColor = categoryColors[item.category] || 'border-gray-300';
+            const cardHTML = `
+                <a href="${item.href}" class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 ${cardColor}" data-category="${item.category}" data-title="${item.title} ${item.keywords}">
+                    <div class="flex flex-col h-full">
+                        <h2 class="text-lg font-bold text-gray-800 mb-2 text-left">${item.title}</h2>
+                        <p class="text-gray-600 text-sm flex-grow text-left">${item.description}</p>
+                    </div>
+                </a>
+            `;
+            cardContainer.innerHTML += cardHTML;
+        });
+
+        renderPagination(items.length);
+    }
+
+    function renderPagination(totalItems) {
+        paginationControls.innerHTML = '';
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        
+        if (totalPages <= 1) return;
+
+        const prevButton = document.createElement('button');
+        prevButton.innerHTML = `<i class="fas fa-chevron-left"></i>`;
+        prevButton.className = 'px-3 py-1 rounded-md text-gray-600 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed';
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                filterAndRender();
+            }
+        });
+        paginationControls.appendChild(prevButton);
+
+        const pageInfo = document.createElement('span');
+        pageInfo.textContent = `${currentPage} / ${totalPages}`;
+        pageInfo.className = 'px-3 py-1 text-sm font-medium text-gray-700';
+        paginationControls.appendChild(pageInfo);
+
+        const nextButton = document.createElement('button');
+        nextButton.innerHTML = `<i class="fas fa-chevron-right"></i>`;
+        nextButton.className = 'px-3 py-1 rounded-md text-gray-600 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                filterAndRender();
+            }
+        });
+        paginationControls.appendChild(nextButton);
+    }
+
+    function filterAndRender() {
+        const searchTerm = searchBox.value.toLowerCase().trim();
+        
+        const filteredContents = allContents.filter(item => {
+            const categoryMatch = (activeCategory === 'all' || item.category === activeCategory);
+            const searchMatch = (searchTerm === '' || item.title.toLowerCase().includes(searchTerm) || item.keywords.toLowerCase().includes(searchTerm));
+            return categoryMatch && searchMatch;
+        });
+
+        renderCards(filteredContents);
+    }
+    
+    function handleCategoryChange(category) {
+        activeCategory = category;
+        currentPage = 1;
+        filterAndRender();
+        desktopFilterButtons.forEach(btn => {
+            btn.classList.toggle('filter-btn-active', btn.dataset.category === activeCategory);
+            btn.classList.toggle('bg-white', btn.dataset.category !== activeCategory);
+        });
+        const selectedLink = document.querySelector(`.filter-btn-mobile[data-category="${category}"]`);
+        if (selectedLink) {
+            dropdownLabel.textContent = selectedLink.textContent;
+        }
+    }
+
+    // --- イベントリスナー設定 ---
+    hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = hamburgerBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    searchBox.addEventListener('input', () => {
+        currentPage = 1;
+        filterAndRender();
+    });
+
+    desktopFilterButtons.forEach(button => {
+        button.addEventListener('click', () => handleCategoryChange(button.dataset.category));
+    });
+
+    mobileFilterLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            handleCategoryChange(link.dataset.category);
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+        });
+    });
+
+    dropdownBtn.addEventListener('click', () => {
+        dropdownPanel.classList.toggle('hidden');
+        dropdownIcon.classList.toggle('rotate-180');
+    });
+
+    window.addEventListener('click', (e) => {
+        if (!dropdownBtn.contains(e.target) && !dropdownPanel.contains(e.target)) {
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+        }
+    });
+
+    // --- 初期表示実行 ---
+    filterAndRender();
+});
+</script>
+
+</body>
 </html>

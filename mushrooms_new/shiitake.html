@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>椎茸の健康効果 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Noto Sans JP)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* 日本語フォントの指定 */
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      /* アクティブなナビゲーションボタンのスタイル */
+      .nav-btn-active {
+        background-color: #16a34a; /* green-600 */
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-8 relative">
+        <!-- Indexへのリンクボタン -->
+        <a
+          href="../index_sub.html"
+          class="absolute top-0 left-0 bg-orange-200 hover:bg-orange-300 text-orange-900 font-bold py-2 px-4 rounded-lg transition-colors text-sm shadow"
+        >
+          一覧へ
+        </a>
+        <h1 class="text-4xl md:text-5xl font-bold text-green-600">
+          椎茸の驚くべき力
+        </h1>
+        <p class="text-gray-600 mt-2">プロが解説する10の健康効果と注意点</p>
+      </header>
+
+      <!-- ナビゲーションエリア -->
+      <div class="mb-8 p-4 bg-white rounded-xl shadow-md sticky top-4 z-10">
+        <!-- モバイル向けドロップダウン (xl未満で表示) -->
+        <div class="relative xl:hidden">
+          <button
+            id="dropdown-btn"
+            class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
+          >
+            <span id="dropdown-label" class="font-medium">概要</span>
+            <i
+              id="dropdown-icon"
+              class="fas fa-chevron-down transition-transform"
+            ></i>
+          </button>
+          <div
+            id="dropdown-panel"
+            class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border"
+          >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="page-overview"
+              >概要</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="page-effects"
+              >健康効果</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="page-cautions"
+              >注意点</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="page-summary"
+              >まとめと食べ方</a
+            >
+          </div>
+        </div>
+        <!-- PC向けボタン (xl以上で表示) -->
+        <nav class="hidden xl:flex flex-wrap justify-center items-center gap-2">
+          <button
+            class="nav-btn nav-btn-active px-4 py-2 text-sm font-medium rounded-full"
+            data-target="page-overview"
+          >
+            概要
+          </button>
+          <button
+            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="page-effects"
+          >
+            健康効果
+          </button>
+          <button
+            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="page-cautions"
+          >
+            注意点
+          </button>
+          <button
+            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="page-summary"
+          >
+            まとめと食べ方
+          </button>
+        </nav>
+      </div>
+
+      <!-- メインコンテンツ -->
+      <main>
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+          <!-- 概要ページ -->
+          <article id="page-overview" class="page-content space-y-6">
+            <p>
+              椎茸は、その驚くべき健康効果が10種類あり、一方で食べすぎによるデメリットも3つあるため、適切な摂取量が重要です。本情報は、論文や専門機関の研究に基づき、プロの視点から解説されています。
+            </p>
+          </article>
+
+          <!-- 健康効果ページ -->
+          <article id="page-effects" class="page-content hidden space-y-8">
+            <h2
+              class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+            >
+              10の健康効果
+            </h2>
+            <div class="space-y-6">
+              <section>
+                <h3 class="font-bold text-lg">1. 癌の予防</h3>
+                <p>
+                  <strong class="font-bold text-orange-600">β-グルカン</strong
+                  >や<strong class="font-bold text-orange-600"
+                    >多糖類 (MPSS)</strong
+                  >が免疫作用を高め、癌細胞の成長や転移を抑制する可能性が研究で示されています。ビタミンCなどの抗酸化物質も癌の発生・増殖を防ぎます。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">2. 高血圧予防</h3>
+                <p>
+                  <strong class="font-bold text-orange-600">カリウム</strong
+                  >が血圧の上昇を抑え、<strong class="font-bold text-orange-600"
+                    >エリタデニン</strong
+                  >がコレステロール値を下げ血流を改善することで、血圧を安定させます。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">3. 血糖値の急上昇を防ぐ</h3>
+                <p>
+                  <strong class="font-bold text-orange-600">食物繊維</strong
+                  >や<strong class="font-bold text-orange-600"
+                    >多糖類 (LEP)</strong
+                  >が糖質の吸収を遅らせ、食後の血糖値の急上昇を穏やかにします。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">4. 血栓症の予防</h3>
+                <p>
+                  椎茸の菌糸抽出物や酵素には、血栓を分解する効果や、新たな血栓ができるのを防ぐ<strong
+                    class="font-bold text-orange-600"
+                    >抗血栓作用</strong
+                  >が報告されています。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">5. 肥満の予防</h3>
+                <p>
+                  <strong class="font-bold text-orange-600">グルタミン酸</strong
+                  >が脂肪の蓄積を抑制し、<strong
+                    class="font-bold text-orange-600"
+                    >食物繊維</strong
+                  >が満腹感を与え食べ過ぎを防ぎます。ビタミンB群も代謝をサポートします。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">6. 整腸作用</h3>
+                <p>
+                  <strong class="font-bold text-orange-600"
+                    >水溶性・不溶性の両食物繊維</strong
+                  >が、便通を改善し、善玉菌を増やして腸内環境を整えます。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">7. 免疫力アップ</h3>
+                <p>
+                  食物繊維による腸内環境の改善に加え、<strong
+                    class="font-bold text-orange-600"
+                    >β-グルカン</strong
+                  >や<strong class="font-bold text-orange-600">ビタミンD</strong
+                  >、<strong class="font-bold text-orange-600"
+                    >ビタミンB群</strong
+                  >が免疫細胞を活性化させます。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">8. 虫歯予防</h3>
+                <p>
+                  椎茸の持つ<strong class="font-bold text-orange-600"
+                    >抗菌・抗真菌作用</strong
+                  >が、歯周病の原因菌などが口の中に付着するのを防ぎ、歯の健康を守ります。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">9. アンチエイジング</h3>
+                <p>
+                  免疫力向上や腸内環境改善に加え、強力な抗酸化作用を持つアミノ酸<strong
+                    class="font-bold text-orange-600"
+                    >エルゴチオネイン</strong
+                  >などが細胞の老化を防ぎます。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">10. 骨粗鬆症予防</h3>
+                <p>
+                  <strong class="font-bold text-orange-600">ビタミンD</strong
+                  >がカルシウムの吸収を助け、歯や骨を強くします。日光に当てることでビタミンD量はさらに増加します。
+                </p>
+              </section>
+            </div>
+          </article>
+
+          <!-- 注意点ページ -->
+          <article id="page-cautions" class="page-content hidden space-y-8">
+            <h2
+              class="text-2xl font-bold text-center text-red-600 border-b-2 border-red-200 pb-3"
+            >
+              摂取時の注意点
+            </h2>
+            <div class="space-y-6">
+              <section>
+                <h3 class="font-bold text-lg">1. 便秘・下痢</h3>
+                <p>
+                  食物繊維が豊富なため、過剰に摂取すると便が硬くなったり、下痢を引き起こしたりすることがあります。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">2. 痛風のリスク</h3>
+                <p>
+                  痛風の原因となる<strong class="font-bold text-red-500"
+                    >プリン体</strong
+                  >が含まれています。特に<strong class="font-bold"
+                    >干し椎茸</strong
+                  >は含有量が多いため、食べ過ぎには注意が必要です。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">3. アレルギーの可能性</h3>
+                <p>
+                  まれにアレルギー症状が出ることがあります。特に<strong
+                    class="font-bold text-red-500"
+                    >加熱が不十分</strong
+                  >だとアレルギーを起こしやすいため、食べる際にはしっかりと加熱することが重要です。
+                </p>
+              </section>
+            </div>
+          </article>
+
+          <!-- まとめ・食べ方ページ -->
+          <article id="page-summary" class="page-content hidden space-y-8">
+            <h2
+              class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+            >
+              まとめと食べ方のコツ
+            </h2>
+            <div
+              class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-300"
+            >
+              <h3 class="font-bold text-lg text-orange-600">適切な摂取量</h3>
+              <p class="mt-2 text-gray-700">
+                厳密な規定はありませんが、研究報告を参考にすると<strong
+                  class="font-bold text-orange-600"
+                  >1日1個（約10g）</strong
+                >を目安にすると免疫力アップが期待できます。
+              </p>
+            </div>
+            <div class="space-y-4 mt-6">
+              <h3 class="font-bold text-lg">美味しい椎茸の選び方</h3>
+              <ul class="list-disc list-inside space-y-1 pl-4 text-gray-700">
+                <li>
+                  <strong class="font-bold">生椎茸：</strong
+                  >肉厚で、傘が開ききっておらず、裏のヒダがはっきりしていて白いもの。
+                </li>
+                <li>
+                  <strong class="font-bold">干し椎茸：</strong
+                  >傘に艶がありシワが少なく、裏が綺麗なキツネ色のもの。
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4 mt-6">
+              <h3 class="font-bold text-lg">食べ方のポイント</h3>
+              <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                <li>
+                  <strong class="font-bold text-orange-600">天日干し：</strong
+                  >食べる前に30分以上日光に当てると、ビタミンDと旨味がアップします。
+                </li>
+                <li>
+                  <strong class="font-bold text-orange-600">洗わない：</strong
+                  >風味や香りが落ちるため、基本的には洗わずに使います。
+                </li>
+                <li>
+                  <strong class="font-bold text-orange-600">冷凍保存：</strong
+                  >冷凍状態のまま調理すると旨味が逃げ出しません。
+                </li>
+                <li>
+                  <strong class="font-bold text-orange-600"
+                    >相性の良い食材：</strong
+                  >カルシウム（チーズ、大豆）、鶏肉、ニンニクなどと組み合わせると、栄養吸収や美味しさがアップします。
+                </li>
+              </ul>
+            </div>
+            <p class="text-red-500 mt-6">
+              どのような食材でも適切な量の摂取とバランスが大切です。特定の疾患がある場合は、医師による指示のもとで摂取するようにしてください。
+            </p>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const desktopNavButtons = document.querySelectorAll('.nav-btn');
+        const mobileNavLinks = document.querySelectorAll('.nav-btn-mobile');
+        const contentSections = document.querySelectorAll('.page-content');
+
+        const dropdownBtn = document.getElementById('dropdown-btn');
+        const dropdownLabel = document.getElementById('dropdown-label');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+        const dropdownPanel = document.getElementById('dropdown-panel');
+
+        function switchContent(targetId) {
+          // すべてのコンテンツを非表示
+          contentSections.forEach((section) => {
+            section.classList.add('hidden');
+          });
+          // 対象のコンテンツを表示
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+
+          // PC用ボタンのスタイル更新
+          desktopNavButtons.forEach((btn) => {
+            btn.classList.remove('nav-btn-active');
+            btn.classList.add(
+              'bg-gray-200',
+              'text-gray-700',
+              'hover:bg-gray-300'
+            );
+            if (btn.dataset.target === targetId) {
+              btn.classList.add('nav-btn-active');
+              btn.classList.remove(
+                'bg-gray-200',
+                'text-gray-700',
+                'hover:bg-gray-300'
+              );
+            }
+          });
+
+          // ドロップダウンのラベルを更新
+          const activeLink = document.querySelector(
+            `.nav-btn-mobile[data-target="${targetId}"]`
+          );
+          if (activeLink) {
+            dropdownLabel.textContent = activeLink.textContent;
+          }
+          // ページトップにスクロール
+          window.scrollTo(0, 0);
+        }
+
+        desktopNavButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            switchContent(e.currentTarget.dataset.target);
+          });
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchContent(e.currentTarget.dataset.target);
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+          });
+        });
+
+        // ドロップダウン開閉
+        if (dropdownBtn) {
+          dropdownBtn.addEventListener('click', () => {
+            dropdownPanel.classList.toggle('hidden');
+            dropdownIcon.classList.toggle('rotate-180');
+          });
+        }
+
+        // ドロップダウン外クリックで閉じる
+        window.addEventListener('click', (e) => {
+          if (
+            dropdownBtn &&
+            !dropdownBtn.contains(e.target) &&
+            !dropdownPanel.contains(e.target)
+          ) {
+            dropdownPanel.classList.add('hidden');
+            if (dropdownIcon) {
+              dropdownIcon.classList.remove('rotate-180');
+            }
+          }
+        });
+
+        // 初期表示
+        switchContent('page-overview');
+      });
+    </script>
+  </body>
+</html>

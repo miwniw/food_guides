@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>健康情報ポータル</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Noto Sans JP)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* 日本語フォントの指定 */
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      /* カードのホバーエフェクト */
+      .card-link {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .card-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07),
+          0 4px 6px -4px rgb(0 0 0 / 0.07);
+      }
+      /* アクティブなフィルターボタンのスタイル */
+      .filter-btn-active {
+        background-color: #16a34a; /* green-600 */
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-green-600">
+          食と健康ライブラリ
+        </h1>
+        <p class="text-gray-500 mt-2">
+          気になる食材やテーマを選んで、知識を深めましょう。
+        </p>
+      </header>
+
+      <!-- 検索・フィルター機能 -->
+      <div class="mb-8 p-4 bg-white rounded-xl shadow">
+        <!-- ブレークポイントをmdからxlに変更 -->
+        <div class="flex flex-col xl:flex-row xl:items-center gap-4">
+          <!-- 検索ボックス -->
+          <div class="w-full xl:w-1/3">
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <i class="fas fa-search text-gray-400"></i>
+              </span>
+              <input
+                type="search"
+                id="search-box"
+                placeholder="キーワードで検索..."
+                class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+          </div>
+
+          <!-- カテゴリフィルター -->
+          <div class="w-full xl:w-2/3">
+            <!-- モバイル向けドロップダウン (xl未満で表示) -->
+            <div class="relative xl:hidden">
+              <button
+                id="dropdown-btn"
+                class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
+              >
+                <span id="dropdown-label" class="font-medium">すべて</span>
+                <i
+                  id="dropdown-icon"
+                  class="fas fa-chevron-down transition-transform"
+                ></i>
+              </button>
+              <div
+                id="dropdown-panel"
+                class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-10 border"
+              >
+                <a
+                  href="#"
+                  class="filter-btn-mobile block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  data-category="all"
+                  >すべて</a
+                >
+                <a
+                  href="#"
+                  class="filter-btn-mobile block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  data-category="fruit"
+                  >果物</a
+                >
+                <a
+                  href="#"
+                  class="filter-btn-mobile block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  data-category="vegetable"
+                  >野菜</a
+                >
+                <a
+                  href="#"
+                  class="filter-btn-mobile block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  data-category="meat-fish"
+                  >肉と魚</a
+                >
+                <a
+                  href="#"
+                  class="filter-btn-mobile block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  data-category="other"
+                  >その他食材</a
+                >
+                <a
+                  href="#"
+                  class="filter-btn-mobile block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  data-category="knowledge"
+                  >健康の知識</a
+                >
+                <a
+                  href="#"
+                  class="filter-btn-mobile block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  data-category="philosophy"
+                  >哲学・名言</a
+                >
+              </div>
+            </div>
+
+            <!-- PC向けボタン (xl以上で表示) -->
+            <div class="hidden xl:flex flex-wrap items-center gap-2">
+              <span class="font-bold text-sm mr-2 shrink-0">カテゴリ:</span>
+              <button
+                class="filter-btn filter-btn-active px-3 py-1 text-sm font-medium rounded-full"
+                data-category="all"
+              >
+                すべて
+              </button>
+              <button
+                class="filter-btn px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+                data-category="fruit"
+              >
+                果物
+              </button>
+              <button
+                class="filter-btn px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+                data-category="vegetable"
+              >
+                野菜
+              </button>
+              <button
+                class="filter-btn px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+                data-category="meat-fish"
+              >
+                肉と魚
+              </button>
+              <button
+                class="filter-btn px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+                data-category="other"
+              >
+                その他食材
+              </button>
+              <button
+                class="filter-btn px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+                data-category="knowledge"
+              >
+                健康の知識
+              </button>
+              <button
+                class="filter-btn px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+                data-category="philosophy"
+              >
+                哲学・名言
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <!-- 各SPAへのリンクをカード形式で表示 -->
+        <div
+          id="card-container"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          <!-- りんごのカード -->
+          <a
+            href="./fruits_new/apple.html"
+            class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 border-pink-300"
+            data-category="fruit"
+            data-title="りんごの健康効果 医者 12の健康効果 注意点"
+          >
+            <div class="flex flex-col h-full text-center">
+              <h2 class="text-lg font-bold text-gray-800 mb-2">
+                りんごの健康効果
+              </h2>
+              <p class="text-gray-600 text-sm flex-grow">
+                「1日1個のりんごは医者を遠ざける」は本当？12の健康効果と注意点を詳しく見ていきましょう。
+              </p>
+            </div>
+          </a>
+
+          <!-- 人参のカード -->
+          <a
+            href="./vegetables_new/carrot.html"
+            class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 border-green-300"
+            data-category="vegetable"
+            data-title="人参の健康効果 9つの健康効果 食べ方"
+          >
+            <div class="flex flex-col h-full text-center">
+              <h2 class="text-lg font-bold text-gray-800 mb-2">
+                人参の健康効果
+              </h2>
+              <p class="text-gray-600 text-sm flex-grow">
+                肝臓保護から美肌効果まで。9つの驚くべき効果と、栄養を逃さない食べ方のコツを解説します。
+              </p>
+            </div>
+          </a>
+
+          <!-- 椎茸のカード -->
+          <a
+            href="./mushrooms_new/shiitake.html"
+            class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 border-green-300"
+            data-category="vegetable"
+            data-title="椎茸の健康効果 10の力 癌予防 アンチエイジング"
+          >
+            <div class="flex flex-col h-full text-center">
+              <h2 class="text-lg font-bold text-gray-800 mb-2">
+                椎茸の健康効果
+              </h2>
+              <p class="text-gray-600 text-sm flex-grow">
+                癌予防からアンチエイジングまで。日本の食卓に欠かせない椎茸の、知られざる10の力を解説します。
+              </p>
+            </div>
+          </a>
+
+          <!-- 慢性炎症のカード -->
+          <a
+            href="./etc_new/chronic_inflammation.html"
+            class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 border-orange-300"
+            data-category="knowledge"
+            data-title="慢性炎症を抑える食事 動脈硬化 健康長寿 食事術"
+          >
+            <div class="flex flex-col h-full text-center">
+              <h2 class="text-lg font-bold text-gray-800 mb-2">
+                慢性炎症を抑える食事
+              </h2>
+              <p class="text-gray-600 text-sm flex-grow">
+                万病のもと「慢性炎症」。動脈を綺麗にし、健康長寿を促すための食事術を専門家が解説します。
+              </p>
+            </div>
+          </a>
+
+          <!-- 腸活のカード -->
+          <a
+            href="./etc_new/chokatsu.html"
+            class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 border-orange-300"
+            data-category="knowledge"
+            data-title="腸内環境の重要性と食事法 毎日摂取 発酵食品 トマト"
+          >
+            <div class="flex flex-col h-full text-center">
+              <h2 class="text-lg font-bold text-gray-800 mb-2">
+                腸内環境の重要性と食事法
+              </h2>
+              <p class="text-gray-600 text-sm flex-grow">
+                腸内環境を整えるために毎日摂取すべき重要食材を専門家が解説します。
+              </p>
+            </div>
+          </a>
+
+          <!-- 酒粕のカード -->
+          <a
+            href="./etc_new/sakekasu.html"
+            class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 border-orange-300"
+            data-category="other"
+            data-title="酒粕 日本酒 発酵食品 腸内環境"
+          >
+            <div class="flex flex-col h-full text-center">
+              <h2 class="text-lg font-bold text-gray-800 mb-2">
+                酒粕が秘める驚きの健康効果
+              </h2>
+              <p class="text-gray-600 text-sm flex-grow">
+                日本酒の製造過程から生まれる酒粕とその健康効果について、専門家が解説します。
+              </p>
+            </div>
+          </a>
+
+          <!-- ヒポクラテスのカード -->
+          <a
+            href="./etc_new/hippocrates.html"
+            class="card-link block bg-white p-4 rounded-xl shadow-lg border-t-4 border-violet-300"
+            data-category="philosophy"
+            data-title="ヒポクラテスの名言 医学の父 哲学 9つの名言"
+          >
+            <div class="flex flex-col h-full text-center">
+              <h2 class="text-lg font-bold text-gray-800 mb-2">
+                ヒポクラテスの名言
+              </h2>
+              <p class="text-gray-600 text-sm flex-grow">
+                「医学の父」が遺した、現代にも通じる健康の哲学。食と健康に関する9つの名言を解説します。
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <!-- 検索結果がない場合の表示 -->
+        <div id="no-results" class="hidden text-center py-16">
+          <i class="fas fa-search text-5xl text-gray-300"></i>
+          <p class="mt-4 text-gray-500">
+            該当するコンテンツが見つかりませんでした。
+          </p>
+        </div>
+      </main>
+
+      <footer class="text-center mt-16 text-gray-400 text-sm">
+        <p>&copy; 2025 食と健康ライブラリ</p>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const searchBox = document.getElementById('search-box');
+        const cards = document.querySelectorAll('.card-link');
+        const noResults = document.getElementById('no-results');
+
+        // --- PC向けフィルターボタンの処理 ---
+        const desktopFilterButtons = document.querySelectorAll(
+          '.hidden.xl\\:flex .filter-btn'
+        );
+        // --- モバイル向けドロップダウンの処理 ---
+        const dropdownBtn = document.getElementById('dropdown-btn');
+        const dropdownLabel = document.getElementById('dropdown-label');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+        const dropdownPanel = document.getElementById('dropdown-panel');
+        const mobileFilterLinks =
+          document.querySelectorAll('.filter-btn-mobile');
+
+        let activeCategory = 'all';
+
+        function filterContent() {
+          const searchTerm = searchBox.value.toLowerCase().trim();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const title = card.dataset.title.toLowerCase();
+            const category = card.dataset.category;
+
+            const categoryMatch =
+              activeCategory === 'all' || category === activeCategory;
+            const searchMatch = searchTerm === '' || title.includes(searchTerm);
+
+            if (categoryMatch && searchMatch) {
+              card.style.display = 'block';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // --- イベントリスナー ---
+        searchBox.addEventListener('input', filterContent);
+
+        // PC用ボタン
+        desktopFilterButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            desktopFilterButtons.forEach((btn) => {
+              btn.classList.remove('filter-btn-active');
+              btn.classList.add(
+                'bg-gray-200',
+                'text-gray-700',
+                'hover:bg-gray-300'
+              );
+            });
+            button.classList.add('filter-btn-active');
+            button.classList.remove(
+              'bg-gray-200',
+              'text-gray-700',
+              'hover:bg-gray-300'
+            );
+
+            activeCategory = button.dataset.category;
+            filterContent();
+          });
+        });
+
+        // モバイル用ドロップダウン開閉
+        dropdownBtn.addEventListener('click', () => {
+          dropdownPanel.classList.toggle('hidden');
+          dropdownIcon.classList.toggle('rotate-180');
+        });
+
+        // モバイル用カテゴリ選択
+        mobileFilterLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            activeCategory = link.dataset.category;
+            dropdownLabel.textContent = link.textContent;
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+            filterContent();
+          });
+        });
+
+        // ドロップダウンの外側をクリックしたら閉じる
+        window.addEventListener('click', (e) => {
+          if (
+            !dropdownBtn.contains(e.target) &&
+            !dropdownPanel.contains(e.target)
+          ) {
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+          }
+        });
+
+        // 初期表示
+        filterContent();
+      });
+    </script>
+  </body>
+</html>

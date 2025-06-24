@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ヒポクラテスの名言 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Noto Sans JP)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* 日本語フォントの指定 */
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      /* アクティブなナビゲーションボタンのスタイル */
+      .nav-btn-active {
+        background-color: #16a34a; /* green-600 */
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-8 relative">
+        <!-- Indexへのリンクボタン -->
+        <a
+          href="../index_sub.html"
+          class="absolute top-0 left-0 bg-orange-200 hover:bg-orange-300 text-orange-900 font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+        >
+          一覧へ
+        </a>
+        <h1 class="text-4xl md:text-5xl font-bold text-green-600">
+          ヒポクラテスの名言
+        </h1>
+        <p class="text-gray-600 mt-2">現代にも通じる健康の哲学</p>
+      </header>
+
+      <!-- ナビゲーションエリア -->
+      <div class="mb-8 p-4 bg-white rounded-xl shadow-md sticky top-4 z-10">
+        <!-- モバイル向けドロップダウン (xl未満で表示) -->
+        <div class="relative xl:hidden">
+          <button
+            id="dropdown-btn"
+            class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
+          >
+            <span id="dropdown-label" class="font-medium"
+              >1. 食べ物で治せない病...</span
+            >
+            <i
+              id="dropdown-icon"
+              class="fas fa-chevron-down transition-transform"
+            ></i>
+          </button>
+          <div
+            id="dropdown-panel"
+            class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border"
+          >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote1"
+              >1. 食べ物で治せない病...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote2"
+              >2. 病気は自然が癒す...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote3"
+              >3. 自然は最良の医者...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote4"
+              >4. 過ぎたるは及ばざる...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote5"
+              >5. 人は自然に従って...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote6"
+              >6. 病を診るのではない...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote7"
+              >7. 歩くことは最良の薬...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote8"
+              >8. 病気の原因は日々の...</a
+            >
+            <a
+              href="#"
+              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+              data-target="quote9"
+              >9. 魂が苦しめば...</a
+            >
+          </div>
+        </div>
+
+        <!-- PC向けボタン (xl以上で表示) -->
+        <nav class="hidden xl:flex flex-wrap justify-center items-center gap-2">
+          <button
+            class="nav-btn nav-btn-active px-3 py-1 text-sm rounded-full"
+            data-target="quote1"
+          >
+            1
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote2"
+          >
+            2
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote3"
+          >
+            3
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote4"
+          >
+            4
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote5"
+          >
+            5
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote6"
+          >
+            6
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote7"
+          >
+            7
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote8"
+          >
+            8
+          </button>
+          <button
+            class="nav-btn px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+            data-target="quote9"
+          >
+            9
+          </button>
+        </nav>
+      </div>
+
+      <!-- メインコンテンツ -->
+      <main>
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+          <!-- 各名言のコンテンツ -->
+          <article id="quote1" class="spa-content space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              1.「食べ物で治せない病は、医者でも治せない。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "Let food be thy medicine and medicine be thy food."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                食事こそが最良の予防・治療であり、薬と同じ価値を持つという考え方。現代でいう「<strong
+                  class="font-bold text-orange-600"
+                  >栄養療法</strong
+                >」や「<strong class="font-bold text-orange-600"
+                  >予防医学</strong
+                >」の基盤に通じる。食生活の乱れが病を生むという思想。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote2" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              2.「病気は自然が癒すものであり、医者はその手助けをするだけである。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "Healing is a matter of time, but it is sometimes also a matter of
+              opportunity."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                病の治癒には時間が必要で、<strong
+                  class="font-bold text-orange-600"
+                  >自然治癒力</strong
+                >が中心となる。医者や薬はそれを支える役割に過ぎないという、自然主義的な医療観。急ぎすぎる治療の危険性への警鐘とも取れる。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote3" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              3.「自然は最良の医者である。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "Nature itself is the best physician."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                人間の身体には本来、自らを癒す力（自然治癒力）が備わっている。医療とはこの力を妨げず、助けるものという考え方。西洋医学とは異なる東洋的な<strong
+                  class="font-bold text-orange-600"
+                  >養生思想</strong
+                >にも通じる。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote4" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              4.「過ぎたるは及ばざるが如し。すべては適度でなければならない。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "Everything in excess is opposed to nature."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                暴飲暴食、過労、過度な運動など、すべての「<strong
+                  class="font-bold text-orange-600"
+                  >過剰</strong
+                >」は自然に反し、健康を損なうという警告。バランスと中庸の大切さを説く。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote5" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              5.「人は自然に従って生きるとき、最も健康である。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "To do nothing is also a good remedy."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                ときに何もしないこと、自然の流れに身を委ねることも最良の治療となる。過剰な医療介入や薬の乱用への警鐘とも受け取れる。現代の「<strong
+                  class="font-bold text-orange-600"
+                  >自然療法</strong
+                >」や「<strong class="font-bold text-orange-600"
+                  >緩和医療</strong
+                >」に通じる発想。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote6" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              6.「病を診るのではない、人を診るのだ。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "It is more important to know what sort of person has a disease
+              than to know what sort of disease a person has."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                病名や症状よりも、その人の体質・生活習慣・心の状態など「<strong
+                  class="font-bold text-orange-600"
+                  >全体像</strong
+                >」を見ることが医療にとって重要であるという<strong
+                  class="font-bold text-orange-600"
+                  >全人的医療</strong
+                >の原点。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote7" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              7.「歩くことは人間にとって最良の薬である。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "Walking is man's best medicine."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                適度な運動、特に日常的な「<strong
+                  class="font-bold text-orange-600"
+                  >歩行</strong
+                >」が健康維持にとって極めて重要であるという実践的アドバイス。運動不足の現代人にとっては特に示唆に富む。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote8" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              8.「病気の原因は、日々の習慣に潜んでいる。」
+            </h2>
+            <p class="text-gray-500 italic">
+              出典不詳（ヒポクラテス思想に基づく現代的要約）
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                <strong class="font-bold text-orange-600">生活習慣病</strong
+                >という概念の先駆けともいえる考え方。食事・睡眠・ストレス・運動など、日常生活の積み重ねが病を生むとする予防重視の姿勢。
+              </p>
+            </div>
+          </article>
+
+          <article id="quote9" class="spa-content hidden space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">
+              9.「魂が苦しめば、身体も病む。」
+            </h2>
+            <p class="text-gray-500 italic">
+              "The natural healing force within each of us is the greatest force
+              in getting well."
+            </p>
+            <div class="border-l-4 border-orange-300 pl-4">
+              <h3 class="font-semibold text-lg">意味・補足：</h3>
+              <p>
+                心と体は切り離せない。「<strong
+                  class="font-bold text-orange-600"
+                  >心の健康</strong
+                >」が「<strong class="font-bold text-orange-600"
+                  >体の健康</strong
+                >」に直結するという、<strong class="font-bold text-orange-600"
+                  >心身一如</strong
+                >の視点。うつ病など心因性の疾患への理解にもつながる。
+              </p>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const desktopNavButtons = document.querySelectorAll('.nav-btn');
+        const mobileNavLinks = document.querySelectorAll('.nav-btn-mobile');
+        const contentSections = document.querySelectorAll('.spa-content');
+
+        const dropdownBtn = document.getElementById('dropdown-btn');
+        const dropdownLabel = document.getElementById('dropdown-label');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+        const dropdownPanel = document.getElementById('dropdown-panel');
+
+        function switchContent(targetId) {
+          // Hide all content
+          contentSections.forEach((section) => {
+            section.classList.add('hidden');
+          });
+          // Show target content
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+
+          // Update desktop button styles
+          desktopNavButtons.forEach((btn) => {
+            btn.classList.remove('nav-btn-active');
+            btn.classList.add(
+              'bg-gray-200',
+              'text-gray-700',
+              'hover:bg-gray-300'
+            );
+            if (btn.dataset.target === targetId) {
+              btn.classList.add('nav-btn-active');
+              btn.classList.remove(
+                'bg-gray-200',
+                'text-gray-700',
+                'hover:bg-gray-300'
+              );
+            }
+          });
+
+          // Update dropdown label
+          const activeLink = document.querySelector(
+            `.nav-btn-mobile[data-target="${targetId}"]`
+          );
+          if (activeLink) {
+            dropdownLabel.textContent = activeLink.textContent;
+          }
+        }
+
+        desktopNavButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            switchContent(e.currentTarget.dataset.target);
+          });
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchContent(e.currentTarget.dataset.target);
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+          });
+        });
+
+        // Dropdown toggle
+        dropdownBtn.addEventListener('click', () => {
+          dropdownPanel.classList.toggle('hidden');
+          dropdownIcon.classList.toggle('rotate-180');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+          if (
+            dropdownBtn &&
+            !dropdownBtn.contains(e.target) &&
+            !dropdownPanel.contains(e.target)
+          ) {
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+          }
+        });
+
+        // Initial state
+        switchContent('quote1');
+      });
+    </script>
+  </body>
+</html>
