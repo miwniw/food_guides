@@ -31,287 +31,294 @@
     </style>
   </head>
   <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto p-4 md:p-8">
-      <!-- ヘッダーのデザインを調整 -->
-      <header class="mb-8">
-        <div class="relative flex items-center justify-center h-24">
-          <!-- 「一覧へ」ボタンを左側に配置 -->
-          <div class="absolute left-0">
-            <a
-              href="../index_sub.html"
-              class="inline-block bg-orange-200 hover:bg-orange-300 text-orange-900 font-bold py-2 px-4 rounded-lg transition-colors text-sm shadow"
-            >
-              一覧へ
-            </a>
-          </div>
-          <!-- 中央のタイトルブロック -->
-          <div class="text-center">
-            <h1
-              class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600"
-            >
-              人参の驚くべき力
-            </h1>
-            <p class="text-xs sm:text-sm text-gray-600 mt-2">
-              プロが解説する9つの健康効果と食べ方のコツ
-            </p>
-          </div>
+    <div class="container mx-auto">
+      <!-- 「一覧へ」ボタンをページ最上部のナビゲーションとして配置 -->
+      <nav class="bg-gray-100">
+        <div class="p-4 max-w-5xl mx-auto">
+          <a
+            href="../index_sub.html"
+            class="inline-block bg-orange-200 hover:bg-orange-300 text-orange-900 font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+          >
+            <i class="fas fa-arrow-left mr-1"></i>
+            一覧へ
+          </a>
         </div>
+      </nav>
+
+      <!-- ヘッダーのデザインを調整 -->
+      <header class="text-center p-4 md:p-8 pt-8">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600">
+          人参の驚くべき力
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-2">
+          プロが解説する9つの健康効果と食べ方のコツ
+        </p>
       </header>
 
-      <!-- ナビゲーションエリア -->
-      <div class="mb-8 p-4 bg-white rounded-xl shadow-md sticky top-4 z-10">
-        <!-- モバイル向けドロップダウン (xl未満で表示) -->
-        <div class="relative xl:hidden">
-          <button
-            id="dropdown-btn"
-            class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
-          >
-            <span id="dropdown-label" class="font-medium">概要</span>
-            <i
-              id="dropdown-icon"
-              class="fas fa-chevron-down transition-transform"
-            ></i>
-          </button>
-          <div
-            id="dropdown-panel"
-            class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border"
-          >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-overview"
-              >概要</a
+      <div class="p-4 md:p-8 pt-0">
+        <!-- ナビゲーションエリア -->
+        <div
+          class="mb-8 p-4 bg-white rounded-xl shadow-md sticky top-4 z-10 max-w-3xl mx-auto"
+        >
+          <!-- モバイル向けドロップダウン (xl未満で表示) -->
+          <div class="relative xl:hidden">
+            <button
+              id="dropdown-btn"
+              class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
             >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-effects"
-              >健康効果</a
+              <span id="dropdown-label" class="font-medium">概要</span>
+              <i
+                id="dropdown-icon"
+                class="fas fa-chevron-down transition-transform"
+              ></i>
+            </button>
+            <div
+              id="dropdown-panel"
+              class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border"
             >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-cautions"
-              >注意点</a
-            >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-summary"
-              >まとめと食べ方</a
-            >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-overview"
+                >概要</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-effects"
+                >健康効果</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-cautions"
+                >注意点</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-summary"
+                >まとめと食べ方</a
+              >
+            </div>
           </div>
-        </div>
-        <!-- PC向けボタン (xl以上で表示) -->
-        <nav class="hidden xl:flex flex-wrap justify-center items-center gap-2">
-          <button
-            class="nav-btn nav-btn-active px-4 py-2 text-sm font-medium rounded-full"
-            data-target="page-overview"
+          <!-- PC向けボタン (xl以上で表示) -->
+          <nav
+            class="hidden xl:flex flex-wrap justify-center items-center gap-2"
           >
-            概要
-          </button>
-          <button
-            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
-            data-target="page-effects"
-          >
-            健康効果
-          </button>
-          <button
-            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
-            data-target="page-cautions"
-          >
-            注意点
-          </button>
-          <button
-            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
-            data-target="page-summary"
-          >
-            まとめと食べ方
-          </button>
-        </nav>
-      </div>
-
-      <!-- メインコンテンツ -->
-      <main>
-        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-          <!-- 概要ページ -->
-          <article id="page-overview" class="page-content space-y-6">
-            <h2
-              class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-3"
+            <button
+              class="nav-btn nav-btn-active px-4 py-2 text-sm font-medium rounded-full"
+              data-target="page-overview"
             >
               概要
-            </h2>
-            <p>
-              人参は古くから生薬としても用いられ、知られざる驚くべき健康効果が9つあります。しかし、食べすぎには注意が必要で、デメリットも存在します。この解説では、論文や専門機関の研究に基づき、人参で得られる健康効果、一日の摂取目安量、そして食べ方のポイントをプロの視点から詳しく説明します。
-            </p>
-          </article>
-
-          <!-- 健康効果ページ -->
-          <article id="page-effects" class="page-content hidden space-y-8">
-            <h2
-              class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-effects"
             >
-              9つの健康効果
-            </h2>
-            <div class="space-y-6">
-              <section>
-                <h3 class="font-bold text-lg">1. 肝臓の保護</h3>
-                <p>
-                  人参に含まれる<strong class="font-bold text-orange-600"
-                    >カロテノイド</strong
-                  >は、抗酸化作用を持ち、肝臓の酸化ストレスを軽減し、肝臓を保護する効果があります。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">2. 免疫力向上</h3>
-                <p>
-                  <strong class="font-bold text-orange-600">β-カロテン</strong
-                  >は体内でビタミンAに変換され、皮膚や粘膜の健康を保ちます。また、<strong
-                    class="font-bold text-orange-600"
-                    >ペクチン</strong
-                  >は腸内環境を整え、免疫力を高めます。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">3. 認知機能の低下を防ぐ</h3>
-                <p>
-                  人参に含まれる<strong class="font-bold text-orange-600"
-                    >β-カロテン</strong
-                  >や<strong class="font-bold text-orange-600"
-                    >α-カロテン</strong
-                  >は、長期的に摂取することで認知機能の低下を防ぐ効果があります。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">4. 心血管疾患の予防</h3>
-                <p>
-                  <strong class="font-bold text-orange-600">カリウム</strong
-                  >が血圧の上昇を抑え、<strong class="font-bold text-orange-600"
-                    >β-カロテン</strong
-                  >の抗酸化作用が血管の健康を守ります。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">5. 目の健康を保護</h3>
-                <p>
-                  <strong class="font-bold text-orange-600">ルテイン</strong
-                  >と<strong class="font-bold text-orange-600"
-                    >ゼアキサンチン</strong
-                  >がブルーライトなどの有害な光から網膜を守り、目の病気を予防します。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">6. 癌の予防</h3>
-                <p>
-                  <strong class="font-bold text-orange-600">β-カロテン</strong
-                  >の強い抗酸化作用により、癌の発生や増殖に関わる活性酸素の働きを抑制します。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">7. 腎臓の保護</h3>
-                <p>
-                  <strong class="font-bold text-orange-600">カロテノイド</strong
-                  >や<strong class="font-bold text-orange-600"
-                    >ポリフェノール</strong
-                  >が、抗酸化作用により体内の酸化ストレスを減らし、腎臓の細胞を保護します。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">8. 美肌効果</h3>
-                <p>
-                  <strong class="font-bold text-orange-600">β-カロテン</strong
-                  >が皮膚や粘膜の健康を保ち、<strong
-                    class="font-bold text-orange-600"
-                    >ビタミンC</strong
-                  >がコラーゲンの合成をサポートすることで、肌のハリや潤いを保ちます。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">9. 便秘解消</h3>
-                <p>
-                  <strong class="font-bold text-orange-600"
-                    >不溶性食物繊維</strong
-                  >と<strong class="font-bold text-orange-600"
-                    >水溶性食物繊維</strong
-                  >の両方が含まれており、便通を促し腸内環境を整えます。
-                </p>
-              </section>
-            </div>
-          </article>
-
-          <!-- 注意点ページ -->
-          <article id="page-cautions" class="page-content hidden space-y-8">
-            <h2
-              class="text-2xl font-bold text-center text-red-600 border-b-2 border-red-200 pb-3"
+              健康効果
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-cautions"
             >
-              摂取時の注意点
-            </h2>
-            <div class="space-y-6">
-              <section>
-                <h3 class="font-bold text-lg">
-                  1. 食べすぎによるデメリット（柑皮症）
-                </h3>
-                <p>
-                  人参に豊富なカロテノイドを食べすぎると、肌が黄色くなることがあります。健康に害はなく、食べる量を減らせば元に戻ります。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">2. 適切な摂取量</h3>
-                <p>
-                  厚生労働省は緑黄色野菜を1日に120g以上摂取することを推奨しています。他の野菜と組み合わせてバランス良く摂ることが大切です。
-                </p>
-              </section>
-            </div>
-          </article>
-
-          <!-- まとめ・食べ方ページ -->
-          <article id="page-summary" class="page-content hidden space-y-8">
-            <h2
-              class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+              注意点
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-summary"
             >
-              まとめと食べ方のコツ
-            </h2>
-            <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-300">
-              <h3 class="font-bold text-lg text-pink-600">
-                美味しい人参の選び方
-              </h3>
-              <ul class="list-disc list-inside mt-2 space-y-1 text-gray-700">
-                <li>全体的に濃いオレンジ色で鮮やかなもの。</li>
-                <li>傷やひび割れがないもの。</li>
-                <li>茎の切り口が小さく、変色していないもの。</li>
-              </ul>
-            </div>
-            <div
-              class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-300 mt-6"
-            >
-              <h3 class="font-bold text-lg text-orange-600">
-                食べ方のポイント
-              </h3>
-              <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700">
-                <li>
-                  <strong class="font-bold">葉も栄養豊富：</strong
-                  >ビタミンCやカルシウムが豊富。捨てずに活用しましょう。
-                </li>
-                <li>
-                  <strong class="font-bold">皮も剥かずに調理：</strong
-                  >皮にはβ-カロテンや食物繊維が豊富です。よく洗って皮ごと調理するのがおすすめです。
-                </li>
-                <li>
-                  <strong class="font-bold">ジュース選びに注意：</strong
-                  >市販品は糖質が多い場合があるので、自作するか人参100%のものを選びましょう。
-                </li>
-                <li>
-                  <strong class="font-bold">脂質と相性抜群：</strong
-                  >β-カロテンは脂溶性のため、油で炒めるなど脂質と一緒に摂ると吸収率がアップします。
-                </li>
-              </ul>
-            </div>
-            <p class="text-red-500 mt-6">
-              どのような食材でも適切な量の摂取とバランスが大切です。特定の疾患がある場合は、医師による指示のもとで摂取するようにしてください。
-            </p>
-          </article>
+              まとめと食べ方
+            </button>
+          </nav>
         </div>
-      </main>
+
+        <!-- メインコンテンツ -->
+        <main>
+          <div
+            class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-3xl mx-auto"
+          >
+            <!-- 概要ページ -->
+            <article id="page-overview" class="page-content space-y-6">
+              <h2
+                class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-3"
+              >
+                概要
+              </h2>
+              <p>
+                人参は古くから生薬としても用いられ、知られざる驚くべき健康効果が9つあります。しかし、食べすぎには注意が必要で、デメリットも存在します。この解説では、論文や専門機関の研究に基づき、人参で得られる健康効果、一日の摂取目安量、そして食べ方のポイントをプロの視点から詳しく説明します。
+              </p>
+            </article>
+
+            <!-- 健康効果ページ -->
+            <article id="page-effects" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+              >
+                9つの健康効果
+              </h2>
+              <div class="space-y-6">
+                <section>
+                  <h3 class="font-bold text-lg">1. 肝臓の保護</h3>
+                  <p>
+                    人参に含まれる<strong class="font-bold text-orange-600"
+                      >カロテノイド</strong
+                    >は、抗酸化作用を持ち、肝臓の酸化ストレスを軽減し、肝臓を保護する効果があります。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">2. 免疫力向上</h3>
+                  <p>
+                    <strong class="font-bold text-orange-600">β-カロテン</strong
+                    >は体内でビタミンAに変換され、皮膚や粘膜の健康を保ちます。また、<strong
+                      class="font-bold text-orange-600"
+                      >ペクチン</strong
+                    >は腸内環境を整え、免疫力を高めます。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">3. 認知機能の低下を防ぐ</h3>
+                  <p>
+                    人参に含まれる<strong class="font-bold text-orange-600"
+                      >β-カロテン</strong
+                    >や<strong class="font-bold text-orange-600"
+                      >α-カロテン</strong
+                    >は、長期的に摂取することで認知機能の低下を防ぐ効果があります。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">4. 心血管疾患の予防</h3>
+                  <p>
+                    <strong class="font-bold text-orange-600">カリウム</strong
+                    >が血圧の上昇を抑え、<strong
+                      class="font-bold text-orange-600"
+                      >β-カロテン</strong
+                    >の抗酸化作用が血管の健康を守ります。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">5. 目の健康を保護</h3>
+                  <p>
+                    <strong class="font-bold text-orange-600">ルテイン</strong
+                    >と<strong class="font-bold text-orange-600"
+                      >ゼアキサンチン</strong
+                    >がブルーライトなどの有害な光から網膜を守り、目の病気を予防します。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">6. 癌の予防</h3>
+                  <p>
+                    <strong class="font-bold text-orange-600">β-カロテン</strong
+                    >の強い抗酸化作用により、癌の発生や増殖に関わる活性酸素の働きを抑制します。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">7. 腎臓の保護</h3>
+                  <p>
+                    <strong class="font-bold text-orange-600"
+                      >カロテノイド</strong
+                    >や<strong class="font-bold text-orange-600"
+                      >ポリフェノール</strong
+                    >が、抗酸化作用により体内の酸化ストレスを減らし、腎臓の細胞を保護します。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">8. 美肌効果</h3>
+                  <p>
+                    <strong class="font-bold text-orange-600">β-カロテン</strong
+                    >が皮膚や粘膜の健康を保ち、<strong
+                      class="font-bold text-orange-600"
+                      >ビタミンC</strong
+                    >がコラーゲンの合成をサポートすることで、肌のハリや潤いを保ちます。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">9. 便秘解消</h3>
+                  <p>
+                    <strong class="font-bold text-orange-600"
+                      >不溶性食物繊維</strong
+                    >と<strong class="font-bold text-orange-600"
+                      >水溶性食物繊維</strong
+                    >の両方が含まれており、便通を促し腸内環境を整えます。
+                  </p>
+                </section>
+              </div>
+            </article>
+
+            <!-- 注意点ページ -->
+            <article id="page-cautions" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-red-600 border-b-2 border-red-200 pb-3"
+              >
+                摂取時の注意点
+              </h2>
+              <div class="space-y-6">
+                <section>
+                  <h3 class="font-bold text-lg">
+                    1. 食べすぎによるデメリット（柑皮症）
+                  </h3>
+                  <p>
+                    人参に豊富なカロテノイドを食べすぎると、肌が黄色くなることがあります。健康に害はなく、食べる量を減らせば元に戻ります。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">2. 適切な摂取量</h3>
+                  <p>
+                    厚生労働省は緑黄色野菜を1日に120g以上摂取することを推奨しています。他の野菜と組み合わせてバランス良く摂ることが大切です。
+                  </p>
+                </section>
+              </div>
+            </article>
+
+            <!-- まとめ・食べ方ページ -->
+            <article id="page-summary" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-green-600 border-b-2 border-green-200 pb-3"
+              >
+                まとめと食べ方のコツ
+              </h2>
+              <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-300">
+                <h3 class="font-bold text-lg text-pink-600">
+                  美味しい人参の選び方
+                </h3>
+                <ul class="list-disc list-inside mt-2 space-y-1 text-gray-700">
+                  <li>全体的に濃いオレンジ色で鮮やかなもの。</li>
+                  <li>傷やひび割れがないもの。</li>
+                  <li>茎の切り口が小さく、変色していないもの。</li>
+                </ul>
+              </div>
+              <div
+                class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-300 mt-6"
+              >
+                <h3 class="font-bold text-lg text-orange-600">
+                  食べ方のポイント
+                </h3>
+                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700">
+                  <li>
+                    <strong class="font-bold">葉も栄養豊富：</strong
+                    >ビタミンCやカルシウムが豊富。捨てずに活用しましょう。
+                  </li>
+                  <li>
+                    <strong class="font-bold">皮も剥かずに調理：</strong
+                    >皮にはβ-カロテンや食物繊維が豊富です。よく洗って皮ごと調理するのがおすすめです。
+                  </li>
+                  <li>
+                    <strong class="font-bold">ジュース選びに注意：</strong
+                    >市販品は糖質が多い場合があるので、自作するか人参100%のものを選びましょう。
+                  </li>
+                  <li>
+                    <strong class="font-bold">脂質と相性抜群：</strong
+                    >β-カロテンは脂溶性のため、油で炒めるなど脂質と一緒に摂ると吸収率がアップします。
+                  </li>
+                </ul>
+              </div>
+              <p class="text-red-500 mt-6">
+                どのような食材でも適切な量の摂取とバランスが大切です。特定の疾患がある場合は、プロの指示のもとで摂取するようにしてください。
+              </p>
+            </article>
+          </div>
+        </main>
+      </div>
     </div>
 
     <script>
