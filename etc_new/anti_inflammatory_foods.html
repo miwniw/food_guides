@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>慢性炎症を予防する食事法 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Noto Sans JP)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* 日本語フォントの指定 */
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      /* アクティブなナビゲーションボタンのスタイル */
+      .nav-btn-active {
+        background-color: #10b981; /* emerald-500 */
+        color: white;
+      }
+      /* グローバルヘッダーの高さ分、bodyの上部に余白を追加 */
+      body {
+        padding-top: 64px; /* グローバルヘッダーの高さ(h-16) */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- グローバルメニュー -->
+    <header class="bg-green-700 shadow-md fixed top-0 left-0 right-0 z-50 h-16">
+      <div
+        class="container mx-auto px-4 flex justify-between items-center h-full"
+      >
+        <!-- 左寄せ: サイトタイトル -->
+        <a href="../index.html" class="text-xl font-bold text-white">
+          <i class="fas fa-book-medical mr-2"></i>食と健康ライブラリ
+        </a>
+        <!-- 右寄せ: ナビゲーションメニュー -->
+        <nav>
+          <!-- PC向けメニュー -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a
+              href="../index.html"
+              class="text-gray-200 hover:text-white transition"
+              >ホーム</a
+            >
+            <a
+              href="../index_sub.html"
+              class="text-gray-200 hover:text-white transition"
+              >ライブラリ</a
+            >
+            <a
+              href="../contact.html"
+              class="text-gray-200 hover:text-white transition"
+              >問い合わせ</a
+            >
+          </div>
+          <!-- モバイル向けハンバーガーボタン -->
+          <div class="md:hidden">
+            <button
+              id="hamburger-btn"
+              class="text-white hover:text-gray-200 focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- モバイル向けメニューパネル -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-green-700 shadow-lg absolute top-16 left-0 w-full"
+      >
+        <a
+          href="../index.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >ホーム</a
+        >
+        <a
+          href="../index_sub.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >ライブラリ</a
+        >
+        <a
+          href="../contact.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >問い合わせ</a
+        >
+      </div>
+    </header>
+
+    <div class="container mx-auto">
+      <!-- ページタイトルヘッダー -->
+      <header class="text-center px-4 md:px-8 pt-8 pb-4">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-600">
+          慢性炎症と動脈硬化を予防する食事
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-2">
+          健康長寿の鍵を握る食事術
+        </p>
+      </header>
+
+      <div class="p-4 md:p-8 pt-0">
+        <!-- セクションナビゲーションエリア -->
+        <div
+          class="mb-6 p-4 bg-white rounded-xl shadow-md sticky top-[80px] z-10 max-w-4xl mx-auto"
+        >
+          <!-- モバイル向けドロップダウン (xl未満で表示) -->
+          <div class="relative xl:hidden">
+            <button
+              id="dropdown-btn"
+              class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
+            >
+              <span id="dropdown-label" class="font-medium">慢性炎症とは</span>
+              <i
+                id="dropdown-icon"
+                class="fas fa-chevron-down transition-transform"
+              ></i>
+            </button>
+            <div
+              id="dropdown-panel"
+              class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border"
+            >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-overview"
+                >慢性炎症とは</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-foods"
+                >炎症を防ぐ食材</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-cautions"
+                >注意点</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-summary"
+                >まとめ</a
+              >
+            </div>
+          </div>
+          <!-- PC向けボタン (xl以上で表示) -->
+          <nav
+            class="hidden xl:flex flex-wrap justify-center items-center gap-2"
+          >
+            <button
+              class="nav-btn nav-btn-active px-4 py-2 text-sm font-medium rounded-full"
+              data-target="page-overview"
+            >
+              慢性炎症とは
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-foods"
+            >
+              炎症を防ぐ食材
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-cautions"
+            >
+              注意点
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-summary"
+            >
+              まとめ
+            </button>
+          </nav>
+        </div>
+
+        <!-- メインコンテンツ -->
+        <main>
+          <div
+            class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-4xl mx-auto"
+          >
+            <!-- 概要ページ -->
+            <article id="page-overview" class="page-content space-y-6">
+              <h2
+                class="text-2xl font-bold text-emerald-600 border-b-2 border-emerald-200 pb-3"
+              >
+                慢性炎症とは何か？
+              </h2>
+              <p>
+                「人は血管と共に老いる」と言われるように、血管の健康は寿命に直結します。その血管の老化を促進するのが<strong
+                  class="font-bold text-amber-600"
+                  >慢性炎症</strong
+                >です。これは自覚症状がほとんどないまま持続する軽度な炎症で、体の奥で小さな火が燃え続けているような状態です。
+              </p>
+              <p>
+                この慢性炎症が、動脈硬化、認知症、心疾患、がん、糖尿病など、様々な病気の引き金となります。特に加齢と共に炎症レベルは高まる傾向にあり、健康寿命を縮める大きな要因です。
+              </p>
+              <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-400">
+                <h3 class="font-bold text-lg text-red-600">
+                  慢性炎症の主な原因
+                </h3>
+                <ul class="list-disc list-inside mt-2 space-y-1 text-gray-700">
+                  <li>
+                    <strong class="font-bold">糖化(AGEs):</strong>
+                    精製された糖質の過剰摂取
+                  </li>
+                  <li>
+                    <strong class="font-bold">酸化:</strong>
+                    体の錆びつき、活性酸素の過剰生成
+                  </li>
+                  <li>
+                    <strong class="font-bold">肥満:</strong>
+                    特に内臓脂肪からの炎症性物質の分泌
+                  </li>
+                  <li>
+                    <strong class="font-bold">不適切な生活習慣:</strong>
+                    飲酒、喫煙、運動不足、睡眠不足、ストレス
+                  </li>
+                  <li>
+                    <strong class="font-bold">腸内環境の悪化</strong>や<strong
+                      class="font-bold"
+                      >歯周病</strong
+                    >
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 炎症を防ぐ食材ページ -->
+            <article id="page-foods" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3"
+              >
+                炎症を防ぐ食品・栄養素
+              </h2>
+              <p>
+                慢性炎症を予防・改善するには食事が非常に重要です。ここでは、動脈をきれいにし、炎症を抑制する効果が期待される食材を紹介します。
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">玉ねぎ</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">アリシン</strong
+                    >や<strong class="font-bold text-amber-600"
+                      >ケルセチン</strong
+                    >が血栓予防や抗酸化作用を発揮。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">ほうれん草</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">硝酸塩</strong
+                    >が血管を拡張し、血流を改善。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">クコの実</h4>
+                  <p class="text-sm mt-1">
+                    非常に高い抗酸化力と豊富な栄養素、<strong
+                      class="font-bold text-amber-600"
+                      >ベタイン</strong
+                    >が悪玉アミノ酸を減少。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">切り干し大根</h4>
+                  <p class="text-sm mt-1">
+                    豊富な<strong class="font-bold text-amber-600"
+                      >カリウム</strong
+                    >が余分な塩分を排出し動脈硬化を防ぐ。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">アーモンド</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600"
+                      >マグネシウム</strong
+                    >と<strong class="font-bold text-amber-600"
+                      >ビタミンE</strong
+                    >がLDLコレステロールの酸化を防ぐ。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">納豆</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">ビタミンK</strong
+                    >が持つ強力な抗炎症作用が近年の研究で判明。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">セロリ</h4>
+                  <p class="text-sm mt-1">
+                    体内の抗酸化酵素<strong class="font-bold text-amber-600"
+                      >グルタチオン</strong
+                    >を活性化させ、炎症を抑制。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">鶏むね肉</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600"
+                      >イミダゾールジペプチド</strong
+                    >が強力な抗酸化・抗炎症作用を発揮。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">ターメリック</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">クルクミン</strong
+                    >の超強力な抗炎症作用が特徴。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">ブロッコリー</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600"
+                      >スルフォラファン</strong
+                    >が強力な抗炎症作用を持つ。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">オリーブオイル</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">オレイン酸</strong
+                    >とポリフェノールが心疾患を予防。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">イカ</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">タウリン</strong
+                    >が炎症マーカーを低下させ、死亡率低下と関連。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">鮭</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">ビタミンD</strong
+                    >と<strong class="font-bold text-amber-600"
+                      >アスタキサンチン</strong
+                    >という超強力な抗炎症コンビ。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">レタス</h4>
+                  <p class="text-sm mt-1">
+                    意外にも、野菜・果物の中でトップクラスの免疫力向上作用が報告されている。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">高野豆腐</h4>
+                  <p class="text-sm mt-1">
+                    「天然のサプリメント」と呼ばれるほど栄養価が高い。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">味噌</h4>
+                  <p class="text-sm mt-1">
+                    「朝の毒消し」。<strong class="font-bold text-amber-600"
+                      >メラノイジン</strong
+                    >が持つ高い解毒・抗酸化能力。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">もずく</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600">フコイダン</strong
+                    >に強力な抗がん作用が確認されている。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">青魚</h4>
+                  <p class="text-sm mt-1">
+                    <strong class="font-bold text-amber-600"
+                      >オメガ3脂肪酸</strong
+                    >が炎症を強力に抑制。
+                  </p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-bold">きのこ</h4>
+                  <p class="text-sm mt-1">
+                    「長寿ビタミン」<strong class="font-bold text-amber-600"
+                      >エルゴチオネイン</strong
+                    >が豊富。1日18gでがんリスク45%低下の報告も。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 注意点ページ -->
+            <article id="page-cautions" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-red-600 border-b-2 border-red-200 pb-3"
+              >
+                摂取時の注意点
+              </h2>
+              <div class="space-y-6">
+                <section>
+                  <h3 class="font-bold text-lg">アーモンド</h3>
+                  <p>
+                    カビ毒やアレルギーのリスクがあるため、1日10〜30gの適量を守り、無塩ローストのものを選びましょう。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">クコの実</h3>
+                  <p>
+                    ベタインが含まれるため、妊娠中の方は摂取を控えるべきとされています。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">オメガ3脂肪酸（魚や油）</h3>
+                  <p>
+                    酸化しやすいため、生のままか、加熱は最後にするなど工夫が必要です。
+                  </p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">
+                    ターメリック（ウコン）のクルクミン
+                  </h3>
+                  <p>吸収率が低いため、油や黒胡椒と一緒に摂ると効果的です。</p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-lg">オリーブオイル</h3>
+                  <p>
+                    品質にばらつきがあるため、信頼できる認証（Olive
+                    Japanなど）があるものを選ぶのがおすすめです。
+                  </p>
+                </section>
+              </div>
+            </article>
+
+            <!-- まとめページ -->
+            <article id="page-summary" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3"
+              >
+                まとめ
+              </h2>
+              <p>
+                「今が人生で一番若い日」です。今日から食生活を変えることが、未来の自分への最高の投資となります。
+              </p>
+              <p>
+                慢性炎症は自覚症状なく体を蝕みます。紹介した食材を日々の食卓に意識的に取り入れ、根本から体質を改善し、健康で豊かな人生の基盤を築きましょう。まずは一つ、始めやすいものから習慣にすることが大切です。
+              </p>
+              <div
+                class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-400 mt-6"
+              >
+                <h3 class="font-bold text-lg text-pink-600">
+                  食生活全体のポイント
+                </h3>
+                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700">
+                  <li>
+                    <strong class="font-bold text-red-500"
+                      >精製された糖質を控える:</strong
+                    >
+                    白砂糖や白米、食パンなどは炎症の原因となるAGEsを増やします。
+                  </li>
+                  <li>
+                    <strong class="font-bold text-red-500"
+                      >オメガ6脂肪酸を控える:</strong
+                    >
+                    サラダ油やコーン油などを減らし、炎症を促進する油を避けることが重要です。
+                  </li>
+                  <li>
+                    <strong class="font-bold text-emerald-600"
+                      >オメガ3脂肪酸を摂る:</strong
+                    >
+                    青魚や亜麻仁油を積極的に摂り、脂肪酸のバランスを整えましょう。
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // --- グローバルメニューの制御 ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- SPAコンテンツの制御 ---
+        const desktopNavButtons = document.querySelectorAll('.nav-btn');
+        const mobileNavLinks = document.querySelectorAll('.nav-btn-mobile');
+        const contentSections = document.querySelectorAll('.page-content');
+
+        const dropdownBtn = document.getElementById('dropdown-btn');
+        const dropdownLabel = document.getElementById('dropdown-label');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+        const dropdownPanel = document.getElementById('dropdown-panel');
+
+        function switchContent(targetId) {
+          contentSections.forEach((section) => {
+            section.classList.add('hidden');
+          });
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+
+          desktopNavButtons.forEach((btn) => {
+            btn.classList.remove('nav-btn-active');
+            btn.classList.add(
+              'bg-gray-200',
+              'text-gray-700',
+              'hover:bg-gray-300'
+            );
+            if (btn.dataset.target === targetId) {
+              btn.classList.add('nav-btn-active');
+              btn.classList.remove(
+                'bg-gray-200',
+                'text-gray-700',
+                'hover:bg-gray-300'
+              );
+            }
+          });
+
+          const activeLink = document.querySelector(
+            `.nav-btn-mobile[data-target="${targetId}"]`
+          );
+          if (activeLink) {
+            dropdownLabel.textContent = activeLink.textContent;
+          }
+          window.scrollTo(0, 0);
+        }
+
+        desktopNavButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            switchContent(e.currentTarget.dataset.target);
+          });
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchContent(e.currentTarget.dataset.target);
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+          });
+        });
+
+        if (dropdownBtn) {
+          dropdownBtn.addEventListener('click', () => {
+            dropdownPanel.classList.toggle('hidden');
+            dropdownIcon.classList.toggle('rotate-180');
+          });
+        }
+
+        window.addEventListener('click', (e) => {
+          if (
+            dropdownBtn &&
+            !dropdownBtn.contains(e.target) &&
+            !dropdownPanel.contains(e.target)
+          ) {
+            dropdownPanel.classList.add('hidden');
+            if (dropdownIcon) {
+              dropdownIcon.classList.remove('rotate-180');
+            }
+          }
+        });
+
+        switchContent('page-overview');
+      });
+    </script>
+  </body>
+</html>

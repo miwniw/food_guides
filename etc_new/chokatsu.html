@@ -1,353 +1,248 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>腸内環境を整える食事法 SPA</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腸内環境と食事法 SPA</title>
     <!-- Tailwind CSSをCDNから読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts (Noto Sans JP)を読み込み -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      /* 日本語フォントの指定 */
-      body {
-        font-family: 'Noto Sans JP', sans-serif;
-      }
-      /* アクティブなナビゲーションボタンのスタイル */
-      .nav-btn-active {
-        background-color: #16a34a; /* green-600 */
-        color: white;
-      }
+        /* 日本語フォントの指定 */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        /* アクティブなナビゲーションボタンのスタイル */
+        .nav-btn-active {
+            background-color: #10b981; /* emerald-500 */
+            color: white;
+        }
+        /* グローバルヘッダーの高さ分、bodyの上部に余白を追加 */
+        body {
+            padding-top: 64px; /* グローバルヘッダーの高さ(h-16) */
+        }
     </style>
-  </head>
-  <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto p-4 md:p-8">
-      <header class="mb-8">
-        <div class="relative flex items-center justify-center h-24">
-          <!-- 「一覧へ」ボタンを左側に配置 -->
-          <div class="absolute left-0">
-            <a
-              href="../index_sub.html"
-              class="inline-block bg-orange-200 hover:bg-orange-300 text-orange-900 font-bold py-2 px-4 rounded-lg transition-colors text-sm shadow"
-            >
-              一覧へ
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- グローバルメニュー -->
+    <header class="bg-green-700 shadow-md fixed top-0 left-0 right-0 z-50 h-16">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full">
+            <!-- 左寄せ: サイトタイトル -->
+            <a href="../index.html" class="text-xl font-bold text-white">
+                <i class="fas fa-book-medical mr-2"></i>食と健康ライブラリ
             </a>
-          </div>
-          <div class="text-center">
-            <h1
-              class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600"
-            >
-              腸活のための食事術
-            </h1>
-            <p class="text-gray-600 mt-2">免疫の中心、腸内環境を整える秘訣</p>
-          </div>
-      </header>
-
-      <!-- ナビゲーションエリア -->
-      <div class="mb-8 p-4 bg-white rounded-xl shadow-md sticky top-4 z-10">
-        <!-- モバイル向けドロップダウン (xl未満で表示) -->
-        <div class="relative xl:hidden">
-          <button
-            id="dropdown-btn"
-            class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
-          >
-            <span id="dropdown-label" class="font-medium"
-              >腸内環境の重要性</span
-            >
-            <i
-              id="dropdown-icon"
-              class="fas fa-chevron-down transition-transform"
-            ></i>
-          </button>
-          <div
-            id="dropdown-panel"
-            class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border"
-          >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-importance"
-              >腸内環境の重要性</a
-            >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-3foods"
-              >毎日摂るべき3食材</a
-            >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-fermented"
-              >おすすめ発酵食品</a
-            >
-            <a
-              href="#"
-              class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
-              data-target="page-tomato"
-              >トマトの健康効果</a
-            >
-          </div>
+            <!-- 右寄せ: ナビゲーションメニュー -->
+            <nav>
+                <!-- PC向けメニュー -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../index.html" class="text-gray-200 hover:text-white transition">ホーム</a>
+                    <a href="../index_sub.html" class="text-gray-200 hover:text-white transition">ライブラリ</a>
+                    <a href="../contact.html" class="text-gray-200 hover:text-white transition">問い合わせ</a>
+                </div>
+                <!-- モバイル向けハンバーガーボタン -->
+                <div class="md:hidden">
+                    <button id="hamburger-btn" class="text-white hover:text-gray-200 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </nav>
         </div>
-        <!-- PC向けボタン (xl以上で表示) -->
-        <nav class="hidden xl:flex flex-wrap justify-center items-center gap-2">
-          <button
-            class="nav-btn nav-btn-active px-4 py-2 text-sm font-medium rounded-full"
-            data-target="page-importance"
-          >
-            腸内環境の重要性
-          </button>
-          <button
-            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
-            data-target="page-3foods"
-          >
-            毎日摂るべき3食材
-          </button>
-          <button
-            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
-            data-target="page-fermented"
-          >
-            おすすめ発酵食品
-          </button>
-          <button
-            class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
-            data-target="page-tomato"
-          >
-            トマトの健康効果
-          </button>
-        </nav>
-      </div>
-
-      <!-- メインコンテンツ -->
-      <main>
-        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-          <!-- 1. 腸内環境の重要性 -->
-          <article id="page-importance" class="page-content space-y-6">
-            <h2
-              class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-3"
-            >
-              1. 腸内環境を整えることの重要性
-            </h2>
-            <p>
-              腸は<strong class="font-bold text-orange-600">免疫の中心</strong
-              >であり、免疫細胞の70%から80%が腸内に配置されています。そのため、腸内環境の乱れは全身の免疫の乱れに直結し、健康全体に大きな影響を与えます。
-            </p>
-            <div class="space-y-4">
-              <p>
-                腸は外界と体内をつなぐ唯一の接点であり、その広大な表面積（テニスコート1面分）で常に異物や毒素の侵入から体を守っています。
-              </p>
-              <p>
-                腸内の慢性的な炎症やリーキーガット（腸の透過性亢進）は、免疫系を過剰に活性化させ、他の部位の感染症リスクを高める原因となります。
-              </p>
-              <p>
-                腸内環境を整えることは、病原菌への抵抗力を高めるだけでなく、心臓病、肥満、糖尿病などの<strong
-                  class="font-bold text-orange-600"
-                  >慢性疾患から身を守る</strong
-                >ことにもつながります。
-              </p>
-            </div>
-            <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-300">
-              <h3 class="font-bold text-lg text-pink-600">
-                腸内環境悪化のサイン
-              </h3>
-              <p class="mt-2 text-gray-700">
-                風邪を引きやすい、アレルギー性鼻炎、膀胱炎、脂肪肝、内臓脂肪が多い、頭がぼーっとするといった症状は、腸内環境の悪化と免疫力低下のサインかもしれません。
-              </p>
-            </div>
-          </article>
-
-          <!-- 2. 毎日摂るべき3食材 -->
-          <article id="page-3foods" class="page-content hidden space-y-8">
-            <h2
-              class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-3"
-            >
-              2. 毎日摂取すべき3つの重要な食材
-            </h2>
-            <div class="space-y-6">
-              <section>
-                <h3 class="font-bold text-lg">ニンニクと玉ねぎ</h3>
-                <p>
-                  腸内細菌の餌となる<strong class="font-bold text-orange-600"
-                    >プレバイオティクス</strong
-                  >が豊富です。<strong class="font-bold text-orange-600"
-                    >アリシン</strong
-                  >や<strong class="font-bold text-orange-600"
-                    >有機硫黄化合物</strong
-                  >が含まれ、免疫活性化、血圧抑制、抗酸化作用が期待できます。細かく刻んで10分ほど置いてから調理すると効果的です。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">キノコ類</h3>
-                <p>
-                  <strong class="font-bold text-orange-600"
-                    >ベータグルカン</strong
-                  >という食物繊維が豊富で、腸内の炎症を抑える短鎖脂肪酸の合成を助けます。また、免疫系を直接活性化する作用もあります。シイタケ、エノキ、マイタケなど種類を問わず効果的です。
-                </p>
-              </section>
-            </div>
-          </article>
-
-          <!-- 3. おすすめ発酵食品 -->
-          <article id="page-fermented" class="page-content hidden space-y-8">
-            <h2
-              class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-3"
-            >
-              3. おすすめの発酵食品
-            </h2>
-            <p>
-              日本の発酵食品は<strong class="font-bold text-orange-600"
-                >麹菌（日本麹カビ）</strong
-              >という独特のカビを利用しており、日本人の腸に馴染みやすいとされています。添加物の少ない、または無添加のものを選び、毎日少しずつ摂取することが推奨されます。
-            </p>
-            <div class="space-y-6">
-              <section>
-                <h3 class="font-bold text-lg">納豆</h3>
-                <p>
-                  発酵により栄養価が格段にアップします。血圧降下作用や血液をサラサラにする効果も報告されています。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">味噌</h3>
-                <p>
-                  発酵によってタンパク質量が約2倍に増加。胃がんリスクの低減や、動脈硬化、高血圧の予防効果が報告されています。
-                </p>
-              </section>
-              <section>
-                <h3 class="font-bold text-lg">米酢（特に黒酢）</h3>
-                <p>
-                  アミノ酸が非常に豊富で栄養価が高いです。疲労回復を促進し、コレステロールや中性脂肪を下げる効果も期待できます。
-                </p>
-              </section>
-            </div>
-          </article>
-
-          <!-- 4. トマトの健康効果 -->
-          <article id="page-tomato" class="page-content hidden space-y-8">
-            <h2
-              class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-3"
-            >
-              4. トマトの健康効果
-            </h2>
-            <p>
-              トマトには<strong class="font-bold text-orange-600"
-                >リコピン</strong
-              >という強力な抗酸化物質が含まれており、腸内環境の改善につながります。油と一緒に摂ると吸収率が上がります。
-            </p>
-            <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-300">
-              <h3 class="font-bold text-lg text-pink-600">研究による発見</h3>
-              <p class="mt-2 text-gray-700">
-                最近の研究では、トマトの摂取が腸内細菌の組成を良い方向に変化させることが示されました。具体的には、「肥満菌」の比率が減少し、善玉菌のグループが増加したと報告されています。
-              </p>
-            </div>
-            <p>
-              トマトは腸にとって良い食材の一つであり、週に数回程度摂取することが推奨されます。
-            </p>
-          </article>
+        <!-- モバイル向けメニューパネル -->
+        <div id="mobile-menu" class="hidden md:hidden bg-green-700 shadow-lg absolute top-16 left-0 w-full">
+             <a href="../index.html" class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white">ホーム</a>
+             <a href="../index_sub.html" class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white">ライブラリ</a>
+             <a href="../contact.html" class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white">問い合わせ</a>
         </div>
-      </main>
+    </header>
+
+    <div class="container mx-auto">
+        <!-- ページタイトルヘッダー -->
+        <header class="text-center px-4 md:px-8 pt-8 pb-4">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-600">腸内環境を整える食事法</h1>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2">免疫の中心、腸を整える秘訣</p>
+        </header>
+
+        <div class="p-4 md:p-8 pt-0">
+             <!-- セクションナビゲーションエリア -->
+            <div class="mb-6 p-4 bg-white rounded-xl shadow-md sticky top-[80px] z-10 max-w-4xl mx-auto">
+                <!-- モバイル向けドロップダウン (xl未満で表示) -->
+                <div class="relative xl:hidden">
+                    <button id="dropdown-btn" class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center">
+                        <span id="dropdown-label" class="font-medium">腸と免疫の重要性</span>
+                        <i id="dropdown-icon" class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div id="dropdown-panel" class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border">
+                        <a href="#" class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" data-target="page-importance">腸と免疫の重要性</a>
+                        <a href="#" class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" data-target="page-foods">効果的な食品</a>
+                        <a href="#" class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" data-target="page-cautions">注意点</a>
+                        <a href="#" class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" data-target="page-summary">まとめ</a>
+                    </div>
+                </div>
+                <!-- PC向けボタン (xl以上で表示) -->
+                <nav class="hidden xl:flex flex-wrap justify-center items-center gap-2">
+                    <button class="nav-btn nav-btn-active px-4 py-2 text-sm font-medium rounded-full" data-target="page-importance">腸と免疫の重要性</button>
+                    <button class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300" data-target="page-foods">効果的な食品</a>
+                    <button class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300" data-target="page-cautions">注意点</button>
+                    <button class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300" data-target="page-summary">まとめ</button>
+                </nav>
+            </div>
+        
+            <!-- メインコンテンツ -->
+            <main>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+                    <!-- 1. 腸と免疫の重要性 -->
+                    <article id="page-importance" class="page-content space-y-6">
+                        <h2 class="text-2xl font-bold text-emerald-600 border-b-2 border-emerald-200 pb-3">腸内環境と免疫の深い関係</h2>
+                        <p>私たちの体において、腸は<strong class="font-bold text-amber-600">免疫の中心的な役割</strong>を担っています。免疫細胞の70%〜80%が腸の壁の内側に存在しており、これは外部からの異物や毒素の侵入から体を守るためです。そのため、腸内環境の乱れは免疫の乱れに直結し、全身の健康に影響を与えます。</p>
+                        <p>腸の透過性が高まる「リーキーガット」のような慢性的な炎症が腸に起こると、免疫系が常に過剰に活性化し、他の部位の感染症にかかりやすくなることがあります。腸内環境を整えることは、病原菌への抵抗力を高め、心臓病、肥満、糖尿病などの<strong class="font-bold text-amber-600">慢性疾患から身を守る</strong>ことにもつながります。</p>
+                        <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-400">
+                           <h3 class="font-bold text-lg text-pink-600">腸内環境悪化のサイン</h3>
+                           <p class="mt-2 text-gray-700">風邪を引きやすい、アレルギー性鼻炎、膀胱炎、脂肪肝、内臓脂肪が多い、頭がぼーっとするといった症状は、腸内環境の悪化と免疫力低下のサインかもしれません。</p>
+                        </div>
+                    </article>
+
+                    <!-- 2. 効果的な食材 -->
+                    <article id="page-foods" class="page-content hidden space-y-8">
+                        <h2 class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3">腸内環境を整える効果的な食品</h2>
+                        <div class="space-y-6">
+                            <section>
+                                <h3 class="font-bold text-lg">ニンニクと玉ねぎ</h3>
+                                <p>腸内細菌の良いエサとなる<strong class="font-bold text-amber-600">プレバイオティクス</strong>が豊富です。<strong class="font-bold text-amber-600">アリシン</strong>などの成分が免疫活性化や抗炎症作用を発揮します。</p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-lg">キノコ類</h3>
+                                <p><strong class="font-bold text-amber-600">ベータグルカン</strong>という食物繊維が、腸内の炎症を抑える短鎖脂肪酸の合成を助け、免疫系も活性化します。</p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-lg">発酵食品（納豆、味噌、酢など）</h3>
+                                <p>日本の伝統的な発酵食品は<strong class="font-bold text-amber-600">麹菌</strong>が使われ、日本人の腸に馴染みやすいとされます。発酵により栄養価が高まり、血圧降下や胃がんリスク低減などの効果が報告されています。</p>
+                            </section>
+                            <section>
+                                <h3 class="font-bold text-lg">トマトなどの色の濃い野菜</h3>
+                                <p><strong class="font-bold text-amber-600">リコピン</strong>をはじめとする抗酸化物質が腸内環境を改善します。研究ではトマトの摂取が腸内細菌のバランスを良い方向に変化させることが示されています。</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <!-- 3. 注意点 -->
+                    <article id="page-cautions" class="page-content hidden space-y-8">
+                        <h2 class="text-2xl font-bold text-center text-red-600 border-b-2 border-red-200 pb-3">摂取時の注意点</h2>
+                        <div class="space-y-6">
+                            <section>
+                                <h3 class="font-bold text-lg">ニンニクと玉ねぎ</h3>
+                                <p>胃腸が弱い方は、生での摂取は避け、加熱したり量を調整したりすることが必要です。</p>
+                            </section>
+                             <section>
+                                <h3 class="font-bold text-lg">発酵食品</h3>
+                                <p>市販品は<strong class="font-bold text-red-500">添加物</strong>の少ないものを選びましょう。また、一度に大量摂取するのではなく、<strong class="font-bold text-red-500">毎日少しずつ</strong>摂ることが腸への負担を減らすコツです。体質に合わない場合は無理に摂取しないでください。</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <!-- 4. まとめ -->
+                    <article id="page-summary" class="page-content hidden space-y-8">
+                         <h2 class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3">まとめ</h2>
+                         <p>腸の健康は全身の免疫機能と密接に関連しており、日々の食生活において、<strong class="font-bold text-amber-600">「この食べ物が腸内の細菌にとって良いものか」</strong>という視点を持つことが推奨されます。</p>
+                         <div class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400">
+                            <h3 class="font-bold text-lg text-amber-600">腸活のポイント</h3>
+                            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700">
+                                <li>プレバイオティクスが豊富な<strong class="font-bold">ニンニク、玉ねぎ、キノコ類</strong>を摂る。</li>
+                                <li>伝統的な<strong class="font-bold">発酵食品（納豆、味噌、酢）</strong>を摂る。</li>
+                                <li>抗酸化物質を多く含む<strong class="font-bold">色の濃い野菜（特にトマト）</strong>を摂る。</li>
+                                <li>これらの食品を<strong class="font-bold">毎日少しずつ、バランス良く</strong>摂取する。</li>
+                            </ul>
+                         </div>
+                         <p>体からのサインを見逃さず、腸内環境の改善に取り組むことが、健康な毎日を送るための鍵となります。</p>
+                    </article>
+                </div>
+            </main>
+        </div>
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- グローバルメニューの制御 ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- SPAコンテンツの制御 ---
         const desktopNavButtons = document.querySelectorAll('.nav-btn');
         const mobileNavLinks = document.querySelectorAll('.nav-btn-mobile');
         const contentSections = document.querySelectorAll('.page-content');
-
+        
         const dropdownBtn = document.getElementById('dropdown-btn');
         const dropdownLabel = document.getElementById('dropdown-label');
         const dropdownIcon = document.getElementById('dropdown-icon');
         const dropdownPanel = document.getElementById('dropdown-panel');
 
         function switchContent(targetId) {
-          // すべてのコンテンツを非表示
-          contentSections.forEach((section) => {
-            section.classList.add('hidden');
-          });
-          // 対象のコンテンツを表示
-          const targetContent = document.getElementById(targetId);
-          if (targetContent) {
-            targetContent.classList.remove('hidden');
-          }
-
-          // PC用ボタンのスタイル更新
-          desktopNavButtons.forEach((btn) => {
-            btn.classList.remove('nav-btn-active');
-            btn.classList.add(
-              'bg-gray-200',
-              'text-gray-700',
-              'hover:bg-gray-300'
-            );
-            if (btn.dataset.target === targetId) {
-              btn.classList.add('nav-btn-active');
-              btn.classList.remove(
-                'bg-gray-200',
-                'text-gray-700',
-                'hover:bg-gray-300'
-              );
+            contentSections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetContent = document.getElementById(targetId);
+            if(targetContent) {
+                targetContent.classList.remove('hidden');
             }
-          });
 
-          // ドロップダウンのラベルを更新
-          const activeLink = document.querySelector(
-            `.nav-btn-mobile[data-target="${targetId}"]`
-          );
-          if (activeLink) {
-            dropdownLabel.textContent = activeLink.textContent;
-          }
-          // ページトップにスクロール
-          window.scrollTo(0, 0);
+            desktopNavButtons.forEach(btn => {
+                btn.classList.remove('nav-btn-active');
+                btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                if (btn.dataset.target === targetId) {
+                    btn.classList.add('nav-btn-active');
+                    btn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                }
+            });
+
+            const activeLink = document.querySelector(`.nav-btn-mobile[data-target="${targetId}"]`);
+            if (activeLink) {
+                dropdownLabel.textContent = activeLink.textContent;
+            }
+             window.scrollTo(0,0);
         }
 
-        desktopNavButtons.forEach((button) => {
-          button.addEventListener('click', (e) => {
-            switchContent(e.currentTarget.dataset.target);
-          });
+        desktopNavButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                switchContent(e.currentTarget.dataset.target);
+            });
         });
 
-        mobileNavLinks.forEach((link) => {
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            switchContent(e.currentTarget.dataset.target);
-            dropdownPanel.classList.add('hidden');
-            dropdownIcon.classList.remove('rotate-180');
-          });
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchContent(e.currentTarget.dataset.target);
+                dropdownPanel.classList.add('hidden');
+                dropdownIcon.classList.remove('rotate-180');
+            });
         });
 
-        // ドロップダウン開閉
-        if (dropdownBtn) {
-          dropdownBtn.addEventListener('click', () => {
-            dropdownPanel.classList.toggle('hidden');
-            dropdownIcon.classList.toggle('rotate-180');
-          });
+        if(dropdownBtn) {
+            dropdownBtn.addEventListener('click', () => {
+                dropdownPanel.classList.toggle('hidden');
+                dropdownIcon.classList.toggle('rotate-180');
+            });
         }
 
-        // ドロップダウン外クリックで閉じる
         window.addEventListener('click', (e) => {
-          if (
-            dropdownBtn &&
-            !dropdownBtn.contains(e.target) &&
-            !dropdownPanel.contains(e.target)
-          ) {
-            dropdownPanel.classList.add('hidden');
-            if (dropdownIcon) {
-              dropdownIcon.classList.remove('rotate-180');
+            if (dropdownBtn && !dropdownBtn.contains(e.target) && !dropdownPanel.contains(e.target)) {
+                dropdownPanel.classList.add('hidden');
+                if (dropdownIcon) {
+                    dropdownIcon.classList.remove('rotate-180');
+                }
             }
-          }
         });
 
-        // 初期表示
         switchContent('page-importance');
-      });
+    });
     </script>
-  </body>
+</body>
 </html>
