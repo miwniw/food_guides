@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>抗酸化力を高める食事法 SPA</title>
+    <!-- Tailwind CSSをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Noto Sans JP)を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* 日本語フォントの指定 */
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      /* アクティブなナビゲーションボタンのスタイル */
+      .nav-btn-active {
+        background-color: #10b981; /* emerald-500 */
+        color: white;
+      }
+      /* グローバルヘッダーの高さ分、bodyの上部に余白を追加 */
+      body {
+        padding-top: 64px; /* グローバルヘッダーの高さ(h-16) */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- グローバルメニュー -->
+    <header class="bg-green-700 shadow-md fixed top-0 left-0 right-0 z-50 h-16">
+      <div
+        class="container mx-auto px-4 flex justify-between items-center h-full"
+      >
+        <!-- 左寄せ: サイトタイトル -->
+        <a href="../index.html" class="text-xl font-bold text-white">
+          <i class="fas fa-book-medical mr-2"></i>食と健康ライブラリ
+        </a>
+        <!-- 右寄せ: ナビゲーションメニュー -->
+        <nav>
+          <!-- PC向けメニュー -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a
+              href="../index.html"
+              class="text-gray-200 hover:text-white transition"
+              >ホーム</a
+            >
+            <a
+              href="../index_sub.html"
+              class="text-gray-200 hover:text-white transition"
+              >ライブラリ</a
+            >
+            <a
+              href="../contact.html"
+              class="text-gray-200 hover:text-white transition"
+              >問い合わせ</a
+            >
+          </div>
+          <!-- モバイル向けハンバーガーボタン -->
+          <div class="md:hidden">
+            <button
+              id="hamburger-btn"
+              class="text-white hover:text-gray-200 focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- モバイル向けメニューパネル -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-green-700 shadow-lg absolute top-16 left-0 w-full"
+      >
+        <a
+          href="../index.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >ホーム</a
+        >
+        <a
+          href="../index_sub.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >ライブラリ</a
+        >
+        <a
+          href="../contact.html"
+          class="block py-3 px-6 text-sm text-gray-200 hover:bg-green-600 hover:text-white"
+          >問い合わせ</a
+        >
+      </div>
+    </header>
+
+    <div class="container mx-auto">
+      <!-- ページタイトルヘッダー -->
+      <header class="text-center px-4 md:px-8 pt-8 pb-4">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-600">
+          抗酸化力を高める飲み物の力
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-2">
+          ポリフェノールの効果と正しい摂取法
+        </p>
+      </header>
+
+      <div class="p-4 md:p-8 pt-0">
+        <!-- セクションナビゲーションエリア -->
+        <div
+          class="mb-6 p-4 bg-white rounded-xl shadow-md sticky top-[80px] z-10 max-w-4xl mx-auto"
+        >
+          <!-- モバイル向けドロップダウン (xl未満で表示) -->
+          <div class="relative xl:hidden">
+            <button
+              id="dropdown-btn"
+              class="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex justify-between items-center"
+            >
+              <span id="dropdown-label" class="font-medium">概要</span>
+              <i
+                id="dropdown-icon"
+                class="fas fa-chevron-down transition-transform"
+              ></i>
+            </button>
+            <div
+              id="dropdown-panel"
+              class="absolute hidden mt-1 w-full bg-white rounded-lg shadow-xl z-20 border"
+            >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-overview"
+                >概要</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-polyphenol"
+                >ポリフェノールとは</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-intake"
+                >摂取方法</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-cautions"
+                >注意点</a
+              >
+              <a
+                href="#"
+                class="nav-btn-mobile block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                data-target="page-summary"
+                >まとめ</a
+              >
+            </div>
+          </div>
+          <!-- PC向けボタン (xl以上で表示) -->
+          <nav
+            class="hidden xl:flex flex-wrap justify-center items-center gap-2"
+          >
+            <button
+              class="nav-btn nav-btn-active px-4 py-2 text-sm font-medium rounded-full"
+              data-target="page-overview"
+            >
+              概要
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-polyphenol"
+            >
+              ポリフェノールとは
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-intake"
+            >
+              摂取方法
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-cautions"
+            >
+              注意点
+            </button>
+            <button
+              class="nav-btn px-4 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300"
+              data-target="page-summary"
+            >
+              まとめ
+            </button>
+          </nav>
+        </div>
+
+        <!-- メインコンテンツ -->
+        <main>
+          <div
+            class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-4xl mx-auto"
+          >
+            <!-- 概要ページ -->
+            <article id="page-overview" class="page-content space-y-6">
+              <h2
+                class="text-2xl font-bold text-emerald-600 border-b-2 border-emerald-200 pb-3"
+              >
+                概要
+              </h2>
+              <p>
+                体内の<strong class="font-bold text-amber-600"
+                  >「酸化」を防ぎ「老化」を抑制する「抗酸化力」</strong
+                >の重要性について解説します。実は、私たちの身近な飲み物がポリフェノールの主要な供給源であり、効率的に抗酸化物質を摂取できます。しかし、サプリメントでの摂取や特定の食品の過剰摂取にはリスクも伴います。食品全体（ホールフード）として摂取することの重要性が強調されます。
+              </p>
+            </article>
+
+            <!-- ポリフェノールとは -->
+            <article id="page-polyphenol" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3"
+              >
+                「抗酸化」とポリフェノールの力
+              </h2>
+              <section>
+                <h3 class="font-bold text-lg">「抗酸化」とは何か？</h3>
+                <p>
+                  体内で過剰に溜まった<strong class="font-bold text-amber-600"
+                    >活性酸素</strong
+                  >を除去する働きのことです。活性酸素は体の組織を酸化させ（サビさせ）、老化、がん、動脈硬化、生活習慣病などの原因となります。加齢とともに体内の防御システムは衰えるため、外部からの抗酸化物質の補給が重要になります。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">ポリフェノールの健康効果</h3>
+                <p>
+                  ポリフェノールの摂取は、<strong
+                    class="font-bold text-amber-600"
+                    >うつ病リスクの低下、体重管理、フレイル（虚弱）リスクの低減、死亡率の低下</strong
+                  >など、多くの健康効果と関連することが研究で報告されています。消化器系の問題解決や、糖尿病、神経変性疾患、心血管疾患の予防・改善にも役立つとされています。
+                </p>
+              </section>
+            </article>
+
+            <!-- 摂取方法 -->
+            <article id="page-intake" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3"
+              >
+                ポリフェノールの効果的な摂取方法
+              </h2>
+              <section>
+                <h3 class="font-bold text-lg">主な供給源は「飲み物」</h3>
+                <p>
+                  日本人のポリフェノール摂取源の約半分は飲み物からであり、その内訳は<strong
+                    class="font-bold text-amber-600"
+                    >コーヒーが47%、緑茶が16.4%</strong
+                  >と報告されています。1日の推奨摂取量1000〜1500mgに対し、平均摂取量は約800mgと不足しがちです。
+                </p>
+                <div
+                  class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-400"
+                >
+                  <h4 class="font-bold text-lg text-pink-600">
+                    主な飲み物のポリフェノール量（1杯あたり）
+                  </h4>
+                  <ul
+                    class="list-disc list-inside mt-2 space-y-1 text-gray-700"
+                  >
+                    <li>コーヒー：約300mg</li>
+                    <li>赤ワイン：200〜300mg</li>
+                    <li>緑茶：165mg（粉末なら2倍）</li>
+                    <li>紅茶：144mg</li>
+                    <li>ココア：993mg</li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">注目の「オリーブ緑茶」</h3>
+                <p>
+                  効率的にポリフェノールを摂取するために開発された「オリーブ緑茶」が紹介されています。これには、オリーブオイルの約100倍もの抗酸化ポリフェノール<strong
+                    class="font-bold text-amber-600"
+                    >「オレウロペイン」</strong
+                  >を含むオリーブの葉がブレンドされています。動脈硬化抑制やコレステロール低下などの効果が確認されています。
+                </p>
+              </section>
+            </article>
+
+            <!-- 注意点 -->
+            <article id="page-cautions" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-red-600 border-b-2 border-red-200 pb-3"
+              >
+                ポリフェノール摂取の注意点
+              </h2>
+              <section>
+                <h3 class="font-bold text-lg">サプリメントへの警鐘</h3>
+                <p>
+                  ポリフェノールの健康効果は、基本的に<strong
+                    class="font-bold text-red-500"
+                    >「ホールフード（植物全体）」</strong
+                  >として摂取した場合に発揮されます。特定の成分だけを抽出したサプリメントでは、同じ効果は期待できず、動物実験では高濃度で発がん性を示した例もあります。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">過剰摂取への警告</h3>
+                <p>
+                  ホールフードであっても、一種類だけを摂り過ぎるのは危険です。特に大豆イソフラボンは、ホルモンバランスを崩す可能性があるため、毎日大量に食べ続けることは避けるべきです。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">鉄分吸収への影響</h3>
+                <p>
+                  ポリフェノールは鉄分の吸収を抑える作用があります。鉄分不足になりがちな方は、鉄分を含む食事と緑茶などを同時に摂るのは避けるなどの工夫が必要です。
+                </p>
+              </section>
+              <section>
+                <h3 class="font-bold text-lg">ポリフェノールが豊富な食品</h3>
+                <p>
+                  最も含有量が高いのはハーブの<strong
+                    class="font-bold text-amber-600"
+                    >クローブ</strong
+                  >。その他、ベリー類、リンゴ、豆類、ナッツ、お茶類なども豊富です。重要なのは、一種類に偏らず<strong
+                    class="font-bold text-amber-600"
+                    >「様々な種類の、様々な色の植物を摂取する」</strong
+                  >ことです。
+                </p>
+              </section>
+            </article>
+
+            <!-- まとめ -->
+            <article id="page-summary" class="page-content hidden space-y-8">
+              <h2
+                class="text-2xl font-bold text-center text-emerald-600 border-b-2 border-emerald-200 pb-3"
+              >
+                まとめ
+              </h2>
+              <p>
+                老化予防と健康維持には抗酸化力を高めることが不可欠であり、その鍵はポリフェノールです。日々のコーヒーや緑茶は手軽な摂取源となります。
+              </p>
+              <div
+                class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400"
+              >
+                <h3 class="font-bold text-lg text-amber-600">
+                  安全で効果的な摂取の原則
+                </h3>
+                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700">
+                  <li>
+                    <strong class="font-bold">ホールフードで摂る：</strong
+                    >サプリメントではなく、野菜や果物そのものから摂取することが極めて重要です。
+                  </li>
+                  <li>
+                    <strong class="font-bold">バランス良く摂る：</strong
+                    >一種類に偏らず、様々な種類の植物を食事に取り入れましょう。
+                  </li>
+                </ul>
+              </div>
+              <p>
+                特定の食品の過剰摂取は予期せぬリスクを伴う可能性があります。バランスの取れた食事で、安全に抗酸化力を高めていきましょう。
+              </p>
+            </article>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // --- グローバルメニューの制御 ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- SPAコンテンツの制御 ---
+        const desktopNavButtons = document.querySelectorAll('.nav-btn');
+        const mobileNavLinks = document.querySelectorAll('.nav-btn-mobile');
+        const contentSections = document.querySelectorAll('.page-content');
+
+        const dropdownBtn = document.getElementById('dropdown-btn');
+        const dropdownLabel = document.getElementById('dropdown-label');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+        const dropdownPanel = document.getElementById('dropdown-panel');
+
+        function switchContent(targetId) {
+          contentSections.forEach((section) => {
+            section.classList.add('hidden');
+          });
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+
+          desktopNavButtons.forEach((btn) => {
+            btn.classList.remove('nav-btn-active');
+            btn.classList.add(
+              'bg-gray-200',
+              'text-gray-700',
+              'hover:bg-gray-300'
+            );
+            if (btn.dataset.target === targetId) {
+              btn.classList.add('nav-btn-active');
+              btn.classList.remove(
+                'bg-gray-200',
+                'text-gray-700',
+                'hover:bg-gray-300'
+              );
+            }
+          });
+
+          const activeLink = document.querySelector(
+            `.nav-btn-mobile[data-target="${targetId}"]`
+          );
+          if (activeLink) {
+            dropdownLabel.textContent = activeLink.textContent;
+          }
+          window.scrollTo(0, 0);
+        }
+
+        desktopNavButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            switchContent(e.currentTarget.dataset.target);
+          });
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchContent(e.currentTarget.dataset.target);
+            dropdownPanel.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+          });
+        });
+
+        if (dropdownBtn) {
+          dropdownBtn.addEventListener('click', () => {
+            dropdownPanel.classList.toggle('hidden');
+            dropdownIcon.classList.toggle('rotate-180');
+          });
+        }
+
+        window.addEventListener('click', (e) => {
+          if (
+            dropdownBtn &&
+            !dropdownBtn.contains(e.target) &&
+            !dropdownPanel.contains(e.target)
+          ) {
+            dropdownPanel.classList.add('hidden');
+            if (dropdownIcon) {
+              dropdownIcon.classList.remove('rotate-180');
+            }
+          }
+        });
+
+        switchContent('page-overview');
+      });
+    </script>
+  </body>
+</html>
